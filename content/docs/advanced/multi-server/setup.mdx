@@ -1,0 +1,345 @@
+---
+title: Multi-Server Setup
+description: Configure and manage multiple qBittorrent servers
+---
+
+# Multi-Server Setup
+
+Torrent Vibe supports connecting to multiple qBittorrent instances simultaneously, allowing you to manage torrents across different servers, locations, or configurations. This guide covers setting up and managing multiple servers.
+
+## Understanding Multi-Server
+
+### Benefits of Multi-Server
+
+#### Server Management
+- **Centralized Control**: Manage all servers from one interface
+- **Unified View**: See all torrents across servers
+- **Bulk Operations**: Perform operations on multiple servers
+- **Server Comparison**: Compare performance across servers
+
+#### Use Cases
+- **Home and Work**: Manage home and work servers
+- **Multiple Locations**: Servers in different physical locations
+- **Different Configurations**: Servers with different settings
+- **Backup Servers**: Primary and backup server setups
+
+### Server Types
+
+#### Primary Server
+- **Main Server**: Primary torrent management server
+- **Full Features**: Access to all Torrent Vibe features
+- **Master Configuration**: Main configuration source
+- **Primary Monitoring**: Main monitoring and alerts
+
+#### Secondary Servers
+- **Additional Servers**: Secondary server instances
+- **Limited Features**: Subset of features available
+- **Configuration Sync**: Sync settings from primary
+- **Backup Role**: Serve as backup when primary fails
+
+## Server Configuration
+
+### Adding Servers
+
+#### Server Discovery
+1. **Auto-Discovery**: Automatically find servers on network
+2. **Manual Addition**: Manually add server details
+3. **Import Configuration**: Import server configuration
+4. **Bulk Addition**: Add multiple servers at once
+
+#### Server Details
+- **Server Name**: Friendly name for the server
+- **Host Address**: IP address or hostname
+- **Port Number**: qBittorrent Web UI port
+- **Authentication**: Username and password
+- **SSL/TLS**: HTTPS configuration
+
+### Server Groups
+
+#### Group Organization
+- **Create Groups**: Organize servers into groups
+- **Group Naming**: Descriptive group names
+- **Group Hierarchy**: Nested group structure
+- **Group Permissions**: Permission-based groups
+
+#### Group Management
+- **Group Operations**: Operations on entire groups
+- **Group Settings**: Settings applied to groups
+- **Group Monitoring**: Monitor group performance
+- **Group Policies**: Policies for group management
+
+## Server Switching
+
+### Manual Switching
+
+#### Server Selection
+- **Server Dropdown**: Select active server from dropdown
+- **Quick Switch**: Keyboard shortcuts for switching
+- **Server Bookmarks**: Bookmark frequently used servers
+- **Server History**: Recently used servers
+
+#### Switching Behavior
+- **State Preservation**: Preserve current view and filters
+- **Connection Status**: Show connection status for each server
+- **Switch Confirmation**: Confirm before switching servers
+- **Auto-Reconnect**: Automatically reconnect to servers
+
+### Automatic Switching
+
+#### Auto-Switch Conditions
+- **Load Balancing**: Switch based on server load
+- **Performance**: Switch to better performing server
+- **Availability**: Switch when server becomes unavailable
+- **Policy-based**: Switch based on defined policies
+
+#### Smart Switching
+- **Predictive Switching**: Predict best server to use
+- **User Behavior**: Learn from user switching patterns
+- **Time-based**: Switch servers at specific times
+- **Event-based**: Switch based on events
+
+## Server Monitoring
+
+### Individual Server Monitoring
+
+#### Server Status
+- **Connection Status**: Current connection state
+- **Server Health**: Overall server health metrics
+- **Performance Metrics**: Server performance indicators
+- **Resource Usage**: CPU, memory, disk usage
+
+#### Server Statistics
+- **Torrent Count**: Number of torrents on server
+- **Download/Upload**: Current transfer rates
+- **Disk Space**: Available storage space
+- **Network Usage**: Network bandwidth usage
+
+### Multi-Server Analytics
+
+#### Comparative Analytics
+- **Performance Comparison**: Compare server performance
+- **Usage Patterns**: Analyze usage across servers
+- **Efficiency Metrics**: Server efficiency comparison
+- **Cost Analysis**: Bandwidth cost per server
+
+#### Aggregate Monitoring
+- **Total Statistics**: Combined statistics across servers
+- **Server Distribution**: Distribution of torrents across servers
+- **Load Distribution**: How load is distributed
+- **Failover Status**: Backup server readiness
+
+## Server Synchronization
+
+### Configuration Sync
+
+#### Settings Synchronization
+- **Auto Sync**: Automatically sync settings
+- **Manual Sync**: Manually trigger synchronization
+- **Selective Sync**: Sync specific settings only
+- **Conflict Resolution**: Handle sync conflicts
+
+#### Sync Options
+- **Bidirectional Sync**: Sync in both directions
+- **Master-Slave**: One-way sync from master
+- **Scheduled Sync**: Sync at scheduled times
+- **Real-time Sync**: Sync changes immediately
+
+### Data Synchronization
+
+#### Torrent Synchronization
+- **Torrent Transfer**: Transfer torrents between servers
+- **Progress Sync**: Sync download progress
+- **File Sync**: Sync downloaded files
+- **Metadata Sync**: Sync torrent metadata
+
+#### User Data Sync
+- **Categories Sync**: Sync category definitions
+- **Tags Sync**: Sync tag definitions
+- **Filters Sync**: Sync saved filters
+- **Settings Sync**: Sync user preferences
+
+## Load Balancing
+
+### Automatic Load Balancing
+
+#### Load Distribution
+- **Server Load**: Monitor server load levels
+- **Capacity Planning**: Plan server capacity
+- **Load Thresholds**: Define load thresholds
+- **Auto-Distribution**: Automatically distribute load
+
+#### Balancing Strategies
+- **Round Robin**: Distribute evenly across servers
+- **Least Loaded**: Send to least loaded server
+- **Weighted Distribution**: Weight-based distribution
+- **Geographic**: Distribute based on location
+
+### Manual Load Balancing
+
+#### Server Assignment
+- **Manual Assignment**: Manually assign torrents to servers
+- **Bulk Assignment**: Assign multiple torrents at once
+- **Rule-based Assignment**: Rules for automatic assignment
+- **Rebalancing**: Rebalance existing assignments
+
+## Server Maintenance
+
+### Server Health Checks
+
+#### Automated Checks
+- **Connectivity Tests**: Test server connectivity
+- **Performance Tests**: Test server performance
+- **Resource Checks**: Check server resources
+- **Configuration Validation**: Validate server configuration
+
+#### Health Monitoring
+- **Health Dashboards**: Server health dashboards
+- **Alert System**: Health-related alerts
+- **Trend Analysis**: Health trend analysis
+- **Predictive Maintenance**: Predict maintenance needs
+
+### Server Updates
+
+#### Update Management
+- **Version Tracking**: Track server versions
+- **Update Scheduling**: Schedule server updates
+- **Update Automation**: Automatic update deployment
+- **Rollback Support**: Rollback failed updates
+
+#### Update Coordination
+- **Staged Updates**: Update servers in stages
+- **Update Testing**: Test updates before deployment
+- **Update Monitoring**: Monitor update progress
+- **Update Reporting**: Report on update status
+
+## Security and Access Control
+
+### Server Security
+
+#### Authentication
+- **Server Authentication**: Authenticate to each server
+- **Multi-factor Auth**: MFA for server access
+- **Certificate Auth**: Certificate-based authentication
+- **Token-based Auth**: Token-based access
+
+#### Access Control
+- **Server Permissions**: Control access to servers
+- **Operation Permissions**: Control allowed operations
+- **Time-based Access**: Time-restricted access
+- **IP-based Access**: IP address restrictions
+
+### Network Security
+
+#### Connection Security
+- **Encrypted Connections**: Use HTTPS for connections
+- **VPN Integration**: VPN support for connections
+- **Firewall Rules**: Configure firewall rules
+- **Network Isolation**: Isolate server networks
+
+## Backup and Recovery
+
+### Server Backup
+
+#### Backup Strategies
+- **Server-level Backup**: Backup individual servers
+- **Multi-server Backup**: Backup across servers
+- **Incremental Backup**: Incremental backup strategies
+- **Offsite Backup**: Offsite backup storage
+
+#### Backup Automation
+- **Scheduled Backups**: Automatic backup scheduling
+- **Backup Verification**: Verify backup integrity
+- **Backup Monitoring**: Monitor backup status
+- **Backup Retention**: Manage backup retention
+
+### Disaster Recovery
+
+#### Failover Configuration
+- **Automatic Failover**: Automatic server failover
+- **Failover Testing**: Test failover procedures
+- **Recovery Time**: Minimize recovery time
+- **Data Consistency**: Ensure data consistency
+
+#### Recovery Procedures
+- **Server Recovery**: Recover failed servers
+- **Data Recovery**: Recover lost data
+- **Configuration Recovery**: Recover server configuration
+- **Service Restoration**: Restore services
+
+## Performance Optimization
+
+### Server Optimization
+
+#### Individual Server Tuning
+- **Resource Allocation**: Optimize resource allocation
+- **Network Tuning**: Optimize network settings
+- **Storage Optimization**: Optimize storage configuration
+- **Performance Monitoring**: Monitor server performance
+
+#### Multi-Server Optimization
+- **Load Optimization**: Optimize load distribution
+- **Network Optimization**: Optimize inter-server communication
+- **Cache Optimization**: Optimize caching across servers
+- **Bandwidth Optimization**: Optimize bandwidth usage
+
+## Troubleshooting
+
+### Connection Issues
+
+#### Connectivity Problems
+- **Connection Diagnosis**: Diagnose connection issues
+- **Network Troubleshooting**: Troubleshoot network problems
+- **Firewall Issues**: Resolve firewall blocking
+- **DNS Problems**: Resolve DNS resolution issues
+
+#### Authentication Issues
+- **Login Problems**: Troubleshoot login issues
+- **Permission Errors**: Resolve permission problems
+- **Certificate Issues**: Fix certificate problems
+- **Token Issues**: Resolve authentication token problems
+
+### Performance Issues
+
+#### Server Performance
+- **Slow Response**: Diagnose slow server response
+- **High Resource Usage**: Identify resource bottlenecks
+- **Network Congestion**: Resolve network congestion
+- **Storage Issues**: Fix storage performance problems
+
+#### Synchronization Issues
+- **Sync Failures**: Troubleshoot synchronization failures
+- **Data Conflicts**: Resolve data synchronization conflicts
+- **Performance Impact**: Minimize sync performance impact
+- **Consistency Issues**: Ensure data consistency
+
+## Best Practices
+
+### Server Management
+
+#### Organization
+- **Naming Conventions**: Consistent server naming
+- **Documentation**: Document server configurations
+- **Change Management**: Manage configuration changes
+- **Monitoring**: Continuous monitoring and alerting
+
+#### Maintenance
+- **Regular Updates**: Keep servers updated
+- **Performance Tuning**: Regular performance optimization
+- **Backup Verification**: Regularly test backups
+- **Security Audits**: Regular security assessments
+
+### Performance and Scalability
+
+#### Scalability Planning
+- **Capacity Planning**: Plan for future growth
+- **Resource Monitoring**: Monitor resource utilization
+- **Performance Benchmarking**: Regular performance testing
+- **Scalability Testing**: Test scalability limits
+
+## Next Steps
+
+After setting up multi-server:
+1. Learn about [Server Switching](switching)
+2. Configure [Server Management](management)
+3. Set up [Automation Rules](../automation/rss-feeds)
+4. Explore [Developer Documentation](../developer/) for API integration

@@ -1,0 +1,379 @@
+---
+title: Download Settings
+description: Configure download preferences and behavior
+---
+
+# Download Settings
+
+The Download Settings section allows you to customize how Torrent Vibe handles torrent downloads, including paths, priorities, limits, and automation. This guide covers all download configuration options.
+
+## Download Locations
+
+### Default Paths
+
+#### Primary Download Path
+- **Default Directory**: Main download location for all torrents
+- **Path Selection**: Browse and select download directory
+- **Path Validation**: Verify path exists and is writable
+- **Network Paths**: Support for network share paths
+
+#### Path Templates
+- **Variable Support**: Use variables in paths
+  - `{category}`: Torrent category
+  - `{date}`: Download date (YYYY-MM-DD)
+  - `{year}`: Download year
+  - `{month}`: Download month
+- **Custom Variables**: Define your own variables
+- **Path Preview**: Preview resolved paths
+
+### Special Paths
+
+#### Incomplete Downloads
+- **Temporary Location**: Location for incomplete files
+- **Auto-move**: Automatically move completed files
+- **Cleanup Options**: Clean up temporary files
+- **Space Management**: Manage temporary space usage
+
+#### Watch Directory
+- **Auto-add Directory**: Directory to monitor for new torrents
+- **File Types**: Supported file types (.torrent, .magnet)
+- **Scan Interval**: How often to scan the directory
+- **Processing Rules**: Rules for processing found files
+
+## Download Behavior
+
+### File Handling
+
+#### File Organization
+- **Create Subfolder**: Create torrent-specific subfolders
+- **Subfolder Naming**: How to name subfolders
+- **File Conflicts**: How to handle existing files
+- **Overwrite Options**: Overwrite, skip, or rename conflicts
+
+#### File Permissions
+- **Default Permissions**: Set default file permissions
+- **Owner Settings**: Set file owner and group
+- **Executable Files**: Handle executable file permissions
+- **Security Settings**: Security-related permission settings
+
+### Download Priorities
+
+#### Global Priorities
+- **Default Priority**: Default download priority
+- **Priority Levels**: High, Normal, Low, Skip
+- **Priority Queuing**: How priorities affect queuing
+- **Auto-adjustment**: Automatically adjust priorities
+
+#### File Priorities
+- **Per-file Priority**: Set priority per individual file
+- **Priority Inheritance**: Inherit priority from torrent
+- **Batch Priority**: Set priority for multiple files
+- **Priority Rules**: Automatic priority rules
+
+## Speed and Bandwidth
+
+### Speed Limits
+
+#### Global Speed Limits
+- **Download Limit**: Maximum download speed
+- **Upload Limit**: Maximum upload speed
+- **Unit Selection**: KB/s, MB/s, or unlimited
+- **Precision Control**: Fine-tune speed limits
+
+#### Alternative Speed Limits
+- **Enable Alternative Limits**: Enable secondary speed limits
+- **Alternative Download**: Alternative download speed
+- **Alternative Upload**: Alternative upload speed
+- **Schedule Activation**: When to use alternative limits
+
+### Bandwidth Management
+
+#### Connection Limits
+- **Global Connections**: Maximum total connections
+- **Per-Torrent Connections**: Connections per torrent
+- **Upload Slots**: Maximum upload connections
+- **Download Slots**: Maximum download connections
+
+#### Advanced Bandwidth
+- **Bandwidth Allocation**: How to allocate bandwidth
+- **Fair Sharing**: Fair bandwidth distribution
+- **Priority Bandwidth**: Bandwidth for different priorities
+- **Dynamic Adjustment**: Automatically adjust bandwidth
+
+## Queue Management
+
+### Queue Settings
+
+#### Queue Limits
+- **Maximum Active Downloads**: Maximum concurrent downloads
+- **Maximum Active Torrents**: Maximum total active torrents
+- **Maximum Active Uploads**: Maximum concurrent uploads
+- **Queue Size**: Maximum queued torrents
+
+#### Queue Behavior
+- **Queue Priority**: How to prioritize queued torrents
+- **Queue Processing**: How to process the queue
+- **Queue Persistence**: Save queue across restarts
+- **Queue Recovery**: Recover queue after crashes
+
+### Queue Rules
+
+#### Automatic Queuing
+- **Auto-start Rules**: When to automatically start torrents
+- **Queue Conditions**: Conditions for queuing torrents
+- **Priority Rules**: Priority-based queuing rules
+- **Category Rules**: Category-specific queuing
+
+## Completion Settings
+
+### Post-Download Actions
+
+#### File Operations
+- **Move Completed**: Move files after completion
+- **Move Path**: Destination for completed files
+- **Copy vs Move**: Copy or move completed files
+- **Path Variables**: Use variables in move paths
+
+#### Cleanup Operations
+- **Delete Torrents**: Delete torrent after completion
+- **Delete Files**: Delete files after seeding goals
+- **Cleanup Rules**: Automatic cleanup rules
+- **Archive Options**: Archive completed torrents
+
+### Seeding Settings
+
+#### Seeding Goals
+- **Ratio Limit**: Stop seeding at specific ratio
+- **Time Limit**: Stop seeding after time duration
+- **Size Limit**: Stop seeding after uploaded amount
+- **Speed Limit**: Stop seeding when upload speed drops
+
+#### Seeding Behavior
+- **Super Seeding**: Enable super seeding mode
+- **Seeding Priority**: Priority for seeding torrents
+- **Seeding Limits**: Limits during seeding
+- **Seeding Schedule**: When to allow seeding
+
+## Automation Rules
+
+### Download Automation
+
+#### Auto-start Rules
+- **Start Conditions**: When to automatically start downloads
+- **Category Rules**: Different rules per category
+- **Size Rules**: Rules based on torrent size
+- **Time Rules**: Time-based start rules
+
+#### Auto-stop Rules
+- **Stop Conditions**: When to automatically stop downloads
+- **Completion Rules**: Rules for completed downloads
+- **Error Rules**: Rules for error conditions
+- **Resource Rules**: Rules based on system resources
+
+### File Automation
+
+#### File Organization
+- **Auto-categorization**: Automatically categorize torrents
+- **Auto-tagging**: Automatically apply tags
+- **File Renaming**: Automatically rename files
+- **Folder Creation**: Automatically create folders
+
+#### Content Processing
+- **Virus Scanning**: Scan downloaded files
+- **Content Verification**: Verify downloaded content
+- **Metadata Extraction**: Extract file metadata
+- **Thumbnail Generation**: Generate file thumbnails
+
+## Error Handling
+
+### Download Errors
+
+#### Error Detection
+- **Error Types**: Different types of download errors
+- **Error Thresholds**: When to consider downloads failed
+- **Retry Logic**: Automatic retry settings
+- **Error Reporting**: How to report errors
+
+#### Recovery Options
+- **Auto-recovery**: Automatically recover from errors
+- **Manual Recovery**: Manual error recovery options
+- **Re-check Files**: Verify and repair files
+- **Alternative Sources**: Find alternative download sources
+
+### Network Errors
+
+#### Connection Issues
+- **Reconnection Logic**: How to handle disconnections
+- **Timeout Settings**: Connection timeout settings
+- **Retry Delays**: Delays between retry attempts
+- **Failover Options**: Switch to alternative connections
+
+#### Peer Issues
+- **Peer Blacklisting**: Block problematic peers
+- **Peer Selection**: How to select good peers
+- **Peer Limits**: Limits on peer connections
+- **Peer Quality**: Peer quality requirements
+
+## Advanced Download Features
+
+### Torrent Options
+
+#### Download Options
+- **Sequential Download**: Download files in order
+- **First/Last Piece**: Prioritize first and last pieces
+- **Skip Hash Check**: Skip initial hash verification
+- **Pre-allocate Files**: Pre-allocate file space
+
+#### Performance Options
+- **Disk Write Cache**: Cache disk writes
+- **Memory Usage**: Memory usage for downloads
+- **CPU Usage**: CPU usage for download processing
+- **Network Optimization**: Network-specific optimizations
+
+### Content Management
+
+#### File Filtering
+- **File Type Filters**: Filter by file extensions
+- **Size Filters**: Filter by file sizes
+- **Name Filters**: Filter by file names
+- **Content Filters**: Filter by file content
+
+#### Quality Management
+- **Quality Detection**: Detect content quality
+- **Duplicate Detection**: Detect duplicate files
+- **Corruption Detection**: Detect corrupted files
+- **Integrity Verification**: Verify file integrity
+
+## Monitoring and Logging
+
+### Download Monitoring
+
+#### Progress Tracking
+- **Real-time Progress**: Live download progress
+- **ETA Calculation**: Estimated completion time
+- **Speed Tracking**: Download speed monitoring
+- **Error Tracking**: Track download errors
+
+#### Statistics Collection
+- **Download Statistics**: Collect download metrics
+- **Performance Data**: Track performance data
+- **Usage Patterns**: Analyze usage patterns
+- **Success Rates**: Track download success rates
+
+### Logging Options
+
+#### Download Logs
+- **Log Levels**: Different logging verbosity levels
+- **Log Categories**: Categories of log messages
+- **Log Rotation**: Automatic log rotation
+- **Log Retention**: How long to keep logs
+
+#### Event Logging
+- **Download Events**: Log download-related events
+- **Error Events**: Log error conditions
+- **Performance Events**: Log performance-related events
+- **System Events**: Log system-related events
+
+## Security Settings
+
+### Download Security
+
+#### File Security
+- **Safe Downloads**: Security checks for downloads
+- **Virus Integration**: Integration with antivirus software
+- **Sandbox Execution**: Run downloads in sandbox
+- **Permission Control**: Control file permissions
+
+#### Network Security
+- **Encryption**: Encrypt download connections
+- **IP Filtering**: Filter peer IP addresses
+- **Protocol Security**: Secure protocol usage
+- **Certificate Validation**: Validate SSL certificates
+
+## Performance Optimization
+
+### System Optimization
+
+#### Resource Optimization
+- **CPU Optimization**: Optimize CPU usage
+- **Memory Optimization**: Optimize memory usage
+- **Disk Optimization**: Optimize disk I/O
+- **Network Optimization**: Optimize network usage
+
+#### Download Optimization
+- **Connection Optimization**: Optimize peer connections
+- **Buffer Optimization**: Optimize download buffers
+- **Cache Optimization**: Optimize data caching
+- **Thread Optimization**: Optimize processing threads
+
+## Settings Management
+
+### Configuration Management
+
+#### Settings Backup
+- **Export Settings**: Export download settings
+- **Import Settings**: Import download settings
+- **Reset Settings**: Reset to default settings
+- **Settings Validation**: Validate current settings
+
+#### Profile Management
+- **Download Profiles**: Create download profiles
+- **Profile Switching**: Switch between profiles
+- **Profile Sharing**: Share profiles with others
+- **Profile Templates**: Use profile templates
+
+## Troubleshooting
+
+### Common Download Issues
+
+#### Slow Downloads
+- **Speed Diagnosis**: Diagnose speed issues
+- **Peer Analysis**: Analyze peer connections
+- **Network Testing**: Test network performance
+- **System Analysis**: Analyze system performance
+
+#### Download Failures
+- **Error Analysis**: Analyze download errors
+- **Recovery Options**: Options for recovery
+- **Alternative Methods**: Alternative download methods
+- **Support Resources**: Access support resources
+
+### Performance Issues
+
+#### System Performance
+- **Resource Monitoring**: Monitor system resources
+- **Bottleneck Detection**: Detect performance bottlenecks
+- **Optimization Suggestions**: Get optimization suggestions
+- **Performance Tuning**: Tune performance settings
+
+## Best Practices
+
+### Download Organization
+
+#### File Organization
+- **Consistent Paths**: Use consistent download paths
+- **Logical Structure**: Organize files logically
+- **Naming Conventions**: Use consistent naming
+- **Cleanup Routines**: Regular cleanup procedures
+
+#### Performance Optimization
+- **Optimal Settings**: Use optimal download settings
+- **Resource Management**: Manage system resources
+- **Network Optimization**: Optimize network settings
+- **Regular Maintenance**: Regular performance maintenance
+
+### Security and Safety
+
+#### Safe Downloading
+- **Source Verification**: Verify download sources
+- **Content Scanning**: Scan downloaded content
+- **Permission Management**: Manage file permissions
+- **Access Control**: Control download access
+
+## Next Steps
+
+After configuring download settings:
+1. Learn about [Advanced Options](advanced-options)
+2. Set up [Automation Rules](../advanced/automation/rss-feeds)
+3. Explore [Troubleshooting](../troubleshooting/) for download issues
+4. Review [Developer Documentation](../developer/) for API integration

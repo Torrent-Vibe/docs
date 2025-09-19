@@ -1,0 +1,218 @@
+---
+title: Connecting to qBittorrent
+description: How to connect Torrent Vibe to your qBittorrent instance
+---
+
+# Connecting to qBittorrent
+
+Torrent Vibe acts as a modern web interface for qBittorrent. This guide explains how to establish and troubleshoot the connection between the two applications.
+
+## Prerequisites
+
+Before connecting, ensure:
+
+1. **qBittorrent is installed** and running on your system
+2. **Web UI is enabled** in qBittorrent settings
+3. **Network connectivity** between Torrent Vibe and qBittorrent
+4. **Correct credentials** for qBittorrent Web UI
+
+## Enabling qBittorrent Web UI
+
+### Step-by-Step Setup
+
+1. **Open qBittorrent**
+2. **Go to Settings**: `Tools → Preferences` (or `Ctrl+P`)
+3. **Navigate to Web UI**: Click on "Web UI" in the left sidebar
+4. **Enable Web UI**:
+   - ✅ Check "Enable Web User Interface (Remote control)"
+   - Set a username (recommended for security)
+   - Set a strong password
+   - Choose a port (default: 8080)
+   - Optionally enable HTTPS for secure connections
+
+### Advanced Web UI Settings
+
+```
+Web UI Settings:
+├── Server settings
+│   ├── IP address: 0.0.0.0 (listen on all interfaces)
+│   ├── Port: 8080
+│   └── Use HTTPS: Disabled (unless you have SSL certificates)
+├── Authentication
+│   ├── Username: your_username
+│   ├── Password: your_secure_password
+│   └── Bypass authentication for localhost: Disabled
+└── Options
+    ├── Enable Host header validation: Disabled
+    ├── Enable Cross-Site Request Forgery (CSRF) protection: Enabled
+    └── Enable Web UI security: Enabled
+```
+
+## Connecting Torrent Vibe
+
+### Using the Connection Wizard
+
+1. **Launch Torrent Vibe**
+2. **Start Setup**: If it's your first run, the wizard will appear
+3. **Enter Connection Details**:
+   - **Host**: `localhost` or `127.0.0.1` (for local installation)
+   - **Port**: `8080` (or your configured port)
+   - **Username**: Your qBittorrent Web UI username
+   - **Password**: Your qBittorrent Web UI password
+   - **HTTPS**: Match your qBittorrent HTTPS setting
+
+### Manual Connection Setup
+
+1. **Open Settings**: Click the gear icon (⚙️) in the top-right
+2. **Navigate to qBittorrent**: Go to "qBittorrent Settings"
+3. **Enter Details**: Fill in the connection information
+4. **Test Connection**: Click "Test Connection" button
+5. **Save**: If successful, save the settings
+
+## Connection Types
+
+### Local Connection (Recommended)
+- **Host**: `localhost` or `127.0.0.1`
+- **Port**: `8080` (default)
+- **Best for**: Personal use, same machine setup
+
+### Network Connection
+- **Host**: Your qBittorrent machine's IP address (e.g., `192.168.1.100`)
+- **Port**: Configured Web UI port
+- **Best for**: Multiple devices on same network
+
+### Remote Connection
+- **Host**: Public IP or domain name
+- **Port**: Forwarded port from router
+- **Security**: Requires HTTPS and strong authentication
+- **Best for**: Access from outside your network
+
+## Testing the Connection
+
+### Connection Test Results
+
+**✅ Successful Connection**
+- Status shows "Connected" in green
+- Statistics load immediately
+- Torrent list populates
+- Real-time updates begin
+
+**❌ Connection Failed**
+- Status shows "Disconnected" in red
+- Error message appears
+- No data loads
+
+### Troubleshooting Failed Connections
+
+#### "Connection Refused"
+**Possible Causes**:
+- qBittorrent is not running
+- Wrong port number
+- Firewall blocking the connection
+
+**Solutions**:
+- Start qBittorrent
+- Verify the port in qBittorrent settings
+- Check firewall/antivirus settings
+- Try different port if 8080 is in use
+
+#### "Authentication Failed"
+**Possible Causes**:
+- Incorrect username/password
+- Special characters in password
+- qBittorrent restarted and lost session
+
+**Solutions**:
+- Double-check credentials
+- Reset password in qBittorrent Web UI settings
+- Try accessing qBittorrent Web UI directly first
+
+#### "Network Timeout"
+**Possible Causes**:
+- Network connectivity issues
+- qBittorrent overloaded
+- Large number of torrents causing slow response
+
+**Solutions**:
+- Check network connection
+- Restart qBittorrent
+- Reduce number of active torrents temporarily
+
+## Advanced Configuration
+
+### Multiple qBittorrent Instances
+
+Torrent Vibe supports connecting to multiple qBittorrent servers:
+
+1. Go to **Settings → Server Management**
+2. Click **"Add Server"**
+3. Enter connection details for each server
+4. Switch between servers using the server dropdown
+
+### Connection Profiles
+
+Save different connection profiles for:
+- **Home Network**: Local qBittorrent instance
+- **Work Network**: Remote access setup
+- **VPN Connection**: Secure remote access
+
+### Security Best Practices
+
+1. **Use HTTPS** when possible
+2. **Set strong passwords** for Web UI
+3. **Limit network access** to trusted IPs
+4. **Keep software updated** for security patches
+5. **Use VPN** for remote access over public networks
+
+## Connection Monitoring
+
+### Real-time Status Indicators
+
+- **🟢 Connected**: Everything working normally
+- **🟡 Connecting**: Attempting to establish connection
+- **🔴 Disconnected**: Connection lost, attempting reconnection
+- **🟠 Error**: Connection failed, manual intervention needed
+
+### Connection Logs
+
+Access detailed connection logs:
+1. Go to **Settings → Logs**
+2. Filter by "Connection" category
+3. View timestamps and error details
+
+## Performance Optimization
+
+### qBittorrent Settings for Better Performance
+
+```
+Advanced Settings:
+├── Web UI
+│   ├── Update interval: 1000ms (for real-time updates)
+│   ├── Alternative speed limits: Configure for slower connections
+└── Connection
+    ├── Global maximum number of connections: 500
+    ├── Maximum number of upload slots per torrent: 4
+    └── Alternate speed limits: Enable when needed
+```
+
+### Torrent Vibe Performance Tips
+
+- Use WebSocket connection for real-time updates
+- Limit concurrent API calls during high load
+- Enable caching for static resources
+- Monitor memory usage on resource-constrained systems
+
+## Next Steps
+
+Once connected successfully:
+
+1. Explore the [Interface Overview](../user-guide/interface-overview)
+2. Learn about [Adding Torrents](../user-guide/torrent-management/adding-torrents)
+3. Set up [Categories](../user-guide/organization/categories) and [Tags](../user-guide/organization/tags)
+
+## Getting Help
+
+If connection issues persist:
+- Check [Connection Problems](../troubleshooting/common-issues/connection-problems)
+- Review [Logs and Debugging](../troubleshooting/logs-and-debugging)
+- Contact [Support](../troubleshooting/support)

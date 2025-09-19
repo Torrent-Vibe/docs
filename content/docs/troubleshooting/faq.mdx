@@ -1,0 +1,398 @@
+---
+title: FAQ
+description: Frequently asked questions and common solutions
+---
+
+# Frequently Asked Questions
+
+This FAQ covers the most common questions and issues users encounter with Torrent Vibe. If you can't find an answer here, check the [Troubleshooting](../troubleshooting/) section or contact support.
+
+## Getting Started
+
+### What is Torrent Vibe?
+
+**Torrent Vibe** is a modern, feature-rich web interface for qBittorrent that provides an intuitive and powerful way to manage your torrent downloads. It connects to your existing qBittorrent installation and offers enhanced features like real-time monitoring, multi-server support, and advanced organization tools.
+
+### Do I need qBittorrent?
+
+**Yes**, Torrent Vibe requires qBittorrent to function. It acts as an enhanced interface for qBittorrent, not a replacement. You must have qBittorrent installed and running with Web UI enabled.
+
+### Is Torrent Vibe free?
+
+**Yes**, Torrent Vibe is free and open-source. However, some advanced features may require a premium license for commercial use.
+
+### What are the system requirements?
+
+**Minimum Requirements:**
+- qBittorrent 4.3.0 or later
+- 2GB RAM
+- 500MB free disk space
+- Stable internet connection
+
+**Recommended:**
+- qBittorrent 4.5.0 or later
+- 4GB RAM or more
+- 1GB free disk space
+- High-speed internet
+
+## Installation and Setup
+
+### How do I install Torrent Vibe?
+
+1. Download the appropriate version for your operating system
+2. Run the installer (Windows) or extract and run (Linux/macOS)
+3. Follow the setup wizard
+4. Configure your qBittorrent connection
+5. Start using Torrent Vibe
+
+See [Installation Guide](../quick-start/installation) for detailed instructions.
+
+### Why can't I connect to qBittorrent?
+
+**Common causes:**
+- qBittorrent Web UI is not enabled
+- Wrong host/port/credentials
+- Firewall blocking the connection
+- qBittorrent is not running
+
+**Solutions:**
+1. Enable Web UI in qBittorrent settings
+2. Verify connection details
+3. Check firewall settings
+4. Ensure qBittorrent is running
+
+See [Connecting to qBittorrent](../quick-start/connecting-qbittorrent) for detailed troubleshooting.
+
+### What ports does Torrent Vibe use?
+
+- **qBittorrent Web UI**: Usually port 8080 (configurable)
+- **Torrent Vibe**: Usually port 3000 (configurable)
+- **Torrent Protocol**: Ports 6881-6889 (configurable in qBittorrent)
+
+### Can I use Torrent Vibe on mobile?
+
+**Yes**, Torrent Vibe has a responsive design that works on mobile devices. However, for the best experience, we recommend using a desktop or tablet.
+
+## Features and Functionality
+
+### How do I add torrents?
+
+**Methods to add torrents:**
+1. **Drag and drop** .torrent files
+2. **Click "Add Torrent"** and browse for files
+3. **Paste magnet links** directly
+4. **Use the search** feature to find torrents
+
+See [Adding Torrents](../user-guide/torrent-management/adding-torrents) for complete instructions.
+
+### What are categories and tags?
+
+- **Categories**: Organize torrents by type (Movies, TV Shows, Software, etc.)
+- **Tags**: Flexible labels for cross-cutting organization (HD, Action, Trusted, etc.)
+
+Categories are hierarchical and exclusive, while tags are flat and multiple per torrent.
+
+### How does the search work?
+
+**Search features:**
+- Search by torrent name, file names, or content
+- Use operators: `AND`, `OR`, `NOT`
+- Field-specific search: `name:`, `category:`, `tag:`
+- Wildcard support: `*` and `?`
+- Regular expressions (advanced)
+
+See [Search](../user-guide/organization/search) for detailed search syntax.
+
+### Can I manage multiple qBittorrent servers?
+
+**Yes**, Torrent Vibe supports multi-server management:
+- Connect to multiple qBittorrent instances
+- Switch between servers seamlessly
+- Perform bulk operations across servers
+- Monitor all servers from one interface
+
+See [Multi-Server Setup](../advanced/multi-server/setup) for configuration.
+
+## Performance and Speed
+
+### Why are my downloads slow?
+
+**Possible causes:**
+- Limited bandwidth or ISP throttling
+- Too many active downloads
+- Poor peer availability
+- Network congestion
+- Hardware limitations
+
+**Optimization tips:**
+- Adjust speed limits appropriately
+- Limit concurrent downloads
+- Use speed scheduling
+- Check peer quality
+
+See [Speed Monitoring](../user-guide/monitoring/speed-monitoring) for detailed analysis.
+
+### How do I optimize my speeds?
+
+1. **Check your internet connection**
+2. **Adjust speed limits** in Torrent Vibe
+3. **Limit concurrent downloads**
+4. **Use speed scheduling** for off-peak hours
+5. **Enable port forwarding** in your router
+6. **Update qBittorrent** to the latest version
+
+See [Bandwidth Control](../user-guide/monitoring/bandwidth-control) for advanced optimization.
+
+### What are alternative speed limits?
+
+Alternative speed limits are slower speed settings you can activate:
+- During peak hours to reduce bandwidth usage
+- When you need to prioritize other network activities
+- Based on a schedule or manual activation
+- Automatically when certain conditions are met
+
+## Organization and Management
+
+### How do I organize my torrents?
+
+**Organization methods:**
+1. **Categories**: Group by content type
+2. **Tags**: Apply multiple labels
+3. **Filters**: Create saved searches
+4. **Custom paths**: Use organized folder structures
+
+**Best practices:**
+- Use consistent naming conventions
+- Create categories for main content types
+- Use tags for additional classification
+- Set up automatic organization rules
+
+### Can I automate torrent management?
+
+**Yes**, several automation features:**
+- **RSS feeds**: Auto-download from RSS feeds
+- **Auto-categorization**: Automatically assign categories
+- **Auto-tagging**: Automatically apply tags
+- **Scheduled tasks**: Run tasks at specific times
+- **Rules engine**: Create custom automation rules
+
+See [Automation](../advanced/automation/rss-feeds) for setup.
+
+### How do I set up RSS feeds?
+
+1. **Go to Settings → Automation → RSS**
+2. **Click "Add RSS Feed"**
+3. **Enter feed URL and configure settings**
+4. **Set up filters and rules**
+5. **Enable auto-download**
+
+See [RSS Feeds](../advanced/automation/rss-feeds) for detailed setup.
+
+## Troubleshooting
+
+### Why do I see "Connection Failed"?
+
+**Common solutions:**
+1. **Check qBittorrent**: Ensure it's running with Web UI enabled
+2. **Verify credentials**: Confirm username/password are correct
+3. **Check network**: Ensure Torrent Vibe can reach qBittorrent
+4. **Firewall settings**: Make sure ports are open
+5. **Restart services**: Restart both applications
+
+See [Connection Problems](../troubleshooting/common-issues/connection-problems) for detailed troubleshooting.
+
+### Why are torrents not downloading?
+
+**Possible issues:**
+- No available peers or seeds
+- Torrent file corrupted
+- Insufficient disk space
+- Speed limits too restrictive
+- Network connectivity problems
+
+**Check:**
+1. Torrent health and peer availability
+2. Available disk space
+3. Speed limit settings
+4. Network connection
+
+### How do I fix high CPU/memory usage?
+
+**Optimization steps:**
+1. **Reduce active torrents**: Limit concurrent downloads
+2. **Adjust settings**: Lower thread counts and cache sizes
+3. **Update software**: Ensure latest versions
+4. **Check for conflicts**: Close other resource-intensive applications
+5. **Restart applications**: Fresh start can resolve issues
+
+### What should I do if Torrent Vibe crashes?
+
+1. **Check logs**: Look for error messages in logs
+2. **Restart application**: Try restarting Torrent Vibe
+3. **Check system resources**: Ensure adequate RAM/CPU
+4. **Update software**: Install latest updates
+5. **Contact support**: If problem persists
+
+## Security and Privacy
+
+### Is Torrent Vibe secure?
+
+**Security features:**
+- Encrypted connections (HTTPS support)
+- Secure authentication
+- IP filtering capabilities
+- Regular security updates
+- No data collection without consent
+
+**Best practices:**
+- Use strong passwords
+- Enable HTTPS when possible
+- Keep software updated
+- Use VPN for additional privacy
+
+### Does Torrent Vibe collect my data?
+
+**Data collection:**
+- **Anonymous usage statistics** (optional, helps improve the app)
+- **Crash reports** (optional, helps fix bugs)
+- **No torrent data** is collected or transmitted
+- **All processing** happens locally on your device
+
+You can disable all data collection in settings.
+
+### How do I secure my setup?
+
+**Security recommendations:**
+1. **Use strong passwords** for qBittorrent Web UI
+2. **Enable HTTPS** in qBittorrent settings
+3. **Configure firewall** to restrict access
+4. **Use VPN** for additional privacy
+5. **Keep software updated**
+6. **Regular backups** of your data
+
+## Advanced Features
+
+### How do I use the API?
+
+**API access:**
+- REST API for programmatic access
+- WebSocket API for real-time updates
+- Comprehensive documentation
+- Authentication required
+
+See [API Reference](../developer/api-reference/rest-api) for details.
+
+### Can I customize the interface?
+
+**Customization options:**
+- **Themes**: Light, dark, and custom themes
+- **Layout**: Adjustable panel sizes and positions
+- **Columns**: Show/hide table columns
+- **Language**: Multiple language support
+- **Keyboard shortcuts**: Customizable shortcuts
+
+### What are webhooks?
+
+Webhooks allow Torrent Vibe to send notifications to external services when events occur:
+- Torrent completion
+- Download started
+- Error conditions
+- Speed changes
+
+Configure in **Settings → Automation → Webhooks**.
+
+## Updates and Support
+
+### How do I update Torrent Vibe?
+
+**Update methods:**
+- **Automatic updates**: Enable in settings (recommended)
+- **Manual download**: Download from website
+- **Package manager**: If installed via package manager
+- **Check for updates**: Manual update check
+
+### Where can I get help?
+
+**Support options:**
+1. **Documentation**: Comprehensive guides and tutorials
+2. **Community forums**: User community discussions
+3. **GitHub issues**: Report bugs and request features
+4. **Email support**: Direct support for licensed users
+5. **Live chat**: Real-time assistance (premium)
+
+### How do I report a bug?
+
+**Bug reporting:**
+1. **Check existing issues** on GitHub
+2. **Gather information**: Version, OS, steps to reproduce
+3. **Include logs**: Error messages and log files
+4. **Create issue**: Submit detailed bug report
+5. **Provide feedback**: Help improve the software
+
+## Licensing and Purchase
+
+### What are the licensing options?
+
+**Available licenses:**
+- **Free**: Basic features, personal use
+- **Personal**: Enhanced features, single user
+- **Professional**: All features, commercial use
+- **Enterprise**: Advanced features, multiple users
+
+See [Licensing](../purchase/licensing) for details.
+
+### Can I use Torrent Vibe commercially?
+
+**Commercial use:**
+- Requires appropriate license
+- Professional or Enterprise license needed
+- Contact sales for custom pricing
+- Support included with commercial licenses
+
+### How do I purchase a license?
+
+1. **Visit website**: Go to torrent-vibe.app/pricing
+2. **Choose plan**: Select appropriate license
+3. **Complete purchase**: Secure payment processing
+4. **Receive license**: License key sent via email
+5. **Activate license**: Enter key in application
+
+## Miscellaneous
+
+### Can I import data from other clients?
+
+**Import capabilities:**
+- **qBittorrent**: Native support (direct connection)
+- **Deluge**: Limited import support
+- **Transmission**: Basic import support
+- **uTorrent/BitTorrent**: Manual migration required
+
+### What file formats are supported?
+
+**Supported formats:**
+- **Torrent files**: .torrent files
+- **Magnet links**: magnet: URI scheme
+- **Torrent archives**: .tar.gz, .zip containing torrents
+- **RSS feeds**: Standard RSS/Atom feeds
+
+### Can I use Torrent Vibe offline?
+
+**Offline capabilities:**
+- **Local operation**: All processing is local
+- **No internet required** for core functionality
+- **Offline documentation**: Local help system
+- **Cached data**: Previously loaded data remains accessible
+
+### How do I backup my configuration?
+
+**Backup methods:**
+1. **Automatic backup**: Configure in settings
+2. **Manual export**: Export settings to file
+3. **Full backup**: Backup entire application data
+4. **Cloud backup**: Optional cloud backup
+
+See [General Settings](../user-guide/preferences/general-settings) for backup configuration.
+
+---
+
+**Still have questions?** Check the [Troubleshooting](../troubleshooting/) section or contact our support team.

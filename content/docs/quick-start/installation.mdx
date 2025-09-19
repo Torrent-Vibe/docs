@@ -1,0 +1,166 @@
+---
+title: Installation Guide
+description: How to install and set up Torrent Vibe
+---
+
+# Installation Guide
+
+This guide will walk you through installing Torrent Vibe on your system. Torrent Vibe is a web-based interface that connects to your existing qBittorrent installation.
+
+{/* Screenshot placeholder: Download Page */}
+<img src="/screenshots/download-page.png" alt="Download Page Screenshot" />
+
+*Figure 1: Official Download Page*
+
+## System Requirements
+
+Before installing Torrent Vibe, ensure your system meets these requirements:
+
+- **qBittorrent**: Version 4.3.0 or later
+- **Operating System**: Windows 10+, macOS 10.15+, Linux (Ubuntu 18.04+, CentOS 7+)
+- **RAM**: Minimum 2GB, recommended 4GB+
+- **Storage**: 500MB free space
+- **Network**: Stable internet connection
+
+## Download Options
+
+### Option 1: Pre-built Binaries (Recommended)
+
+1. Visit the [official website](https://torrent-vibe.app/)
+2. Download the appropriate version for your operating system:
+   - **Windows**: `.exe` installer or portable `.zip`
+   - **macOS**: `.dmg` disk image or `.tar.gz`
+   - **Linux**: `.deb`, `.rpm`, or `.tar.gz`
+
+{/* Screenshot placeholder: Installation Wizard */}
+<img src="/screenshots/installation-wizard.png" alt="Installation Wizard Screenshot" />
+
+*Figure 2: Installation Wizard*
+
+### Option 2: Docker Installation
+
+For containerized deployment:
+
+```bash
+# Pull the official Docker image
+docker pull torrentvibe/torrent-vibe:latest
+
+# Run with basic configuration
+docker run -d \
+  --name torrent-vibe \
+  -p 3000:3000 \
+  -v /path/to/config:/app/config \
+  torrentvibe/torrent-vibe:latest
+```
+
+### Option 3: From Source
+
+If you prefer to build from source:
+
+```bash
+# Clone the repository
+git clone https://github.com/torrent-vibe/torrent-vibe.git
+cd torrent-vibe
+
+# Install dependencies
+npm install
+
+# Build for production
+npm run build
+
+# Start the application
+npm start
+```
+
+## Installation Steps
+
+### Windows Installation
+
+1. Download the `.exe` installer from the website
+2. Run the installer as administrator
+3. Follow the installation wizard
+4. Launch Torrent Vibe from the Start menu
+
+### macOS Installation
+
+1. Download the `.dmg` file
+2. Open the disk image
+3. Drag Torrent Vibe to your Applications folder
+4. Launch from Applications or Spotlight
+
+### Linux Installation
+
+#### Ubuntu/Debian
+```bash
+# Download the .deb package
+wget https://github.com/torrent-vibe/torrent-vibe/releases/download/v1.0.0/torrent-vibe_1.0.0_amd64.deb
+
+# Install the package
+sudo dpkg -i torrent-vibe_1.0.0_amd64.deb
+
+# Fix any dependency issues
+sudo apt-get install -f
+```
+
+#### CentOS/RHEL/Fedora
+```bash
+# Download the .rpm package
+wget https://github.com/torrent-vibe/torrent-vibe/releases/download/v1.0.0/torrent-vibe-1.0.0.x86_64.rpm
+
+# Install the package
+sudo rpm -i torrent-vibe-1.0.0.x86_64.rpm
+```
+
+## Post-Installation Setup
+
+After installation, you'll need to configure Torrent Vibe to connect to qBittorrent:
+
+1. **Start qBittorrent** on your system
+2. **Enable Web UI** in qBittorrent preferences:
+   - Go to `Tools → Preferences → Web UI`
+   - Check "Enable Web User Interface"
+   - Set a username and password
+   - Choose a port (default: 8080)
+3. **Launch Torrent Vibe**
+4. **Configure connection** to qBittorrent (see [Connecting to qBittorrent](connecting-qbittorrent))
+
+## Firewall Configuration
+
+Ensure your firewall allows connections on the ports used by:
+
+- **qBittorrent Web UI**: Default port 8080
+- **Torrent Vibe**: Default port 3000
+- **Torrent protocol**: Ports 6881-6889 (configurable in qBittorrent)
+
+## Troubleshooting Installation
+
+### Common Issues
+
+**"Application won't start"**
+- Check system requirements
+- Verify antivirus software isn't blocking the application
+- Try running as administrator (Windows) or with sudo (Linux)
+
+**"Cannot connect to qBittorrent"**
+- Ensure qBittorrent is running
+- Verify Web UI is enabled in qBittorrent settings
+- Check firewall settings
+- Confirm correct IP address and port
+
+**"Permission denied errors"**
+- Run installer as administrator/sudo
+- Check folder permissions for installation directory
+- Ensure user has read/write access to configuration folder
+
+## Next Steps
+
+Once installed, proceed to:
+- [First Run](first-run) - Initial configuration
+- [Connecting to qBittorrent](connecting-qbittorrent) - Set up your connection
+
+## Support
+
+If you encounter issues during installation:
+- Check the [Troubleshooting](../troubleshooting/) section
+- Visit our [Support](../troubleshooting/support) page
+- Join our community forums

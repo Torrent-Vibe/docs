@@ -1,0 +1,224 @@
+---
+title: Interface Overview
+description: Comprehensive guide to Torrent Vibe's user interface
+---
+
+# Interface Overview
+
+Torrent Vibe features a modern, intuitive interface designed for efficient torrent management. This guide provides a complete overview of all interface elements and their functions.
+
+{/* Screenshot placeholder: Main Interface */}
+<img src="/screenshots/main-interface.png" alt="Main Interface Screenshot" />
+
+*Figure 1: Torrent Vibe Main Interface Overview*
+
+## Main Layout
+
+The interface is organized into several key areas:
+
+```
+┌─────────────────────────────────────────────────┐
+│ Header Bar (Search, Settings, User Menu)        │
+├─────────────────────────────────────────────────┤
+│ Sidebar (Navigation, Filters, Categories)       │
+├─────────────────────────────────────────────────┤
+│ Main Content Area                               │
+│ ┌─────────────────────────────────────────────┐ │
+│ │ Statistics Cards                           │ │
+│ ├─────────────────────────────────────────────┤ │
+│ │ Torrent List/Table                          │ │
+│ │ ┌─────────────────────────────────────────┐ │ │
+│ │ │ Torrent Details Panel                  │ │ │
+│ │ └─────────────────────────────────────────┘ │ │
+│ └─────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────┤
+│ Status Bar (Connection Status, System Info)     │
+└─────────────────────────────────────────────────┘
+```
+
+{/* Screenshot placeholder: Interface Layout Diagram */}
+<img src="/screenshots/interface-layout.png" alt="Interface Layout Diagram" />
+
+*Figure 2: Detailed Interface Layout Breakdown*
+
+## Header Bar
+
+Located at the top of the interface, containing:
+
+### Search and Filter Bar
+- **Global Search**: Search torrents by name, hash, or tracker
+- **Quick Filters**: Filter by status (downloading, completed, paused)
+- **Advanced Search**: Use operators like `name:`, `size:`, `category:`
+
+### Action Buttons
+- **Add Torrent**: Open torrent addition dialog
+- **Pause All**: Pause all active torrents
+- **Resume All**: Resume all paused torrents
+- **Delete**: Remove selected torrents
+
+### Settings and Menu
+- **Settings**: Access application settings
+- **User Menu**: Account options, logout, about
+- **Notifications**: View system notifications
+- **Theme Toggle**: Switch between light/dark themes
+
+## Sidebar Navigation
+
+The collapsible sidebar provides quick access to:
+
+### Main Sections
+- **Dashboard**: Overview with statistics and recent activity
+- **All Torrents**: Complete list of all torrents
+- **Downloading**: Currently downloading torrents
+- **Completed**: Finished downloads
+- **Paused**: Stopped torrents
+- **Active**: Torrents with network activity
+
+### Organization
+- **Categories**: User-defined categories
+- **Tags**: Custom tags for organization
+- **Filters**: Saved filter combinations
+
+### Tools
+- **Statistics**: Detailed performance metrics
+- **Speed**: Bandwidth monitoring and limits
+- **Preferences**: Quick access to settings
+
+## Main Content Area
+
+### Statistics Dashboard
+
+The top section displays key metrics:
+
+#### Traffic Statistics
+- **Download Speed**: Current download rate
+- **Upload Speed**: Current upload rate
+- **Total Downloaded**: Session download total
+- **Total Uploaded**: Session upload total
+
+#### Torrent Statistics
+- **Active Torrents**: Number of active downloads/uploads
+- **Total Torrents**: Total number of torrents
+- **Completed Today**: Torrents completed in current session
+- **Disk Space**: Available storage space
+
+### Torrent List View
+
+#### List Layout
+- **Compact View**: Shows essential information in rows
+- **Detailed View**: Expanded information with progress bars
+- **Grid View**: Card-based layout for visual browsing
+
+#### Column Options
+- **Name**: Torrent name and file information
+- **Size**: Total size and downloaded amount
+- **Progress**: Download completion percentage
+- **Status**: Current torrent state
+- **Speed**: Download/upload rates
+- **ETA**: Estimated time of completion
+- **Ratio**: Upload/download ratio
+- **Added**: Date torrent was added
+- **Category**: Assigned category
+- **Tags**: Applied tags
+
+## Context Menus
+
+Right-clicking on torrents or files provides context-sensitive options:
+
+### Torrent Context Menu
+- **Start/Stop**: Control torrent state
+- **Force Start**: Bypass queue limits
+- **Delete**: Remove torrent and data
+- **Set Category**: Assign to category
+- **Add Tags**: Apply tags
+- **Set Location**: Change download location
+- **Copy**: Copy magnet link or hash
+- **Properties**: View detailed properties
+
+### File Context Menu
+- **High/Normal/Low Priority**: Set download priority
+- **Skip**: Don't download this file
+- **Open File**: Open downloaded file
+- **Open Folder**: Open containing folder
+
+## Keyboard Shortcuts
+
+### Global Shortcuts
+- **Ctrl+F**: Focus search bar
+- **Ctrl+A**: Select all torrents
+- **Delete**: Remove selected torrents
+- **F5**: Refresh torrent list
+- **Ctrl+R**: Force refresh
+
+### Navigation
+- **Arrow Keys**: Navigate torrent list
+- **Enter**: Open torrent details
+- **Space**: Start/stop selected torrent
+- **Tab**: Move between interface sections
+
+## Responsive Design
+
+### Desktop Layout
+- Full sidebar and detailed views
+- Multi-column layouts
+- Advanced filtering options
+
+### Tablet Layout
+- Collapsed sidebar by default
+- Simplified statistics cards
+- Touch-friendly interface elements
+
+### Mobile Layout
+- Bottom navigation tabs
+- Stacked layout for torrent details
+- Swipe gestures for actions
+- Optimized for touch interaction
+
+## Customization Options
+
+### Layout Customization
+- **Panel Sizes**: Resize sidebar and detail panels
+- **Column Visibility**: Show/hide table columns
+- **Sort Options**: Sort by any column
+- **Group By**: Group torrents by category, status, etc.
+
+### Theme Options
+- **Light Theme**: Clean, bright interface
+- **Dark Theme**: Easy on the eyes, reduces eye strain
+- **System Theme**: Follows OS preference
+- **Custom Themes**: User-defined color schemes
+
+### Notification Settings
+- **Desktop Notifications**: Browser/system notifications
+- **Sound Alerts**: Audio notifications for events
+- **Email Notifications**: Email alerts for completion
+- **In-App Notifications**: Interface-based notifications
+
+## Performance Features
+
+### Real-time Updates
+- **Live Statistics**: Updates every second
+- **Progress Bars**: Smooth animations
+- **Status Changes**: Immediate visual feedback
+
+### Caching and Optimization
+- **Lazy Loading**: Load data as needed
+- **Image Optimization**: Efficient image handling
+- **Memory Management**: Optimized for large torrent lists
+
+## Accessibility Features
+
+- **Keyboard Navigation**: Full keyboard support
+- **Screen Reader Support**: ARIA labels and descriptions
+- **High Contrast Mode**: Improved visibility
+- **Font Scaling**: Adjustable text sizes
+- **Color Blind Support**: Alternative color schemes
+
+## Next Steps
+
+Now that you understand the interface:
+
+1. Learn about [Adding Torrents](torrent-management/adding-torrents)
+2. Explore [Managing Downloads](torrent-management/managing-downloads)
+3. Set up [Categories](organization/categories) and [Tags](organization/tags)
+4. Configure [Preferences](preferences/general-settings)

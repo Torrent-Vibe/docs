@@ -1,0 +1,147 @@
+---
+title: First Run
+description: Initial setup and configuration after installation
+---
+
+# First Run
+
+Congratulations on installing Torrent Vibe! This guide will help you through the initial setup and configuration process.
+
+## Starting Torrent Vibe
+
+### Desktop Application
+- **Windows**: Launch from Start menu or desktop shortcut
+- **macOS**: Open from Applications folder or Launchpad
+- **Linux**: Run from applications menu or command line
+
+### Web Version
+If you're using the web version, navigate to `http://localhost:3000` in your browser.
+
+## Initial Setup Wizard
+
+When you first launch Torrent Vibe, you'll be greeted with a setup wizard that will guide you through:
+
+### Step 1: Welcome
+- Review the welcome message
+- Accept the terms of service
+- Choose your preferred language
+
+### Step 2: qBittorrent Connection
+- Enter your qBittorrent Web UI details:
+  - **Host**: Usually `localhost` or `127.0.0.1`
+  - **Port**: Default is `8080` (check your qBittorrent settings)
+  - **Username**: Your qBittorrent Web UI username
+  - **Password**: Your qBittorrent Web UI password
+  - **HTTPS**: Enable if you have SSL configured
+
+### Step 3: Interface Preferences
+- Choose your theme (Light/Dark/System)
+- Set your preferred language
+- Configure notification settings
+- Select default view layout
+
+### Step 4: Advanced Options
+- Enable/disable telemetry (optional, helps improve the app)
+- Configure update checking preferences
+- Set up backup options
+
+## Manual Configuration
+
+If you prefer to configure manually or the wizard doesn't appear:
+
+1. Click the **Settings** gear icon in the top-right corner
+2. Navigate to **qBittorrent Settings**
+3. Enter your connection details
+4. Click **Test Connection** to verify
+5. Save your settings
+
+## Verifying Connection
+
+After configuration, you should see:
+
+- ✅ **Connection Status**: "Connected" in green
+- 📊 **Statistics Panel**: Live data from qBittorrent
+- 📋 **Torrent List**: Your current torrents
+- 🔄 **Real-time Updates**: Numbers and progress bars updating
+
+## Common First-Run Issues
+
+### "Connection Failed"
+**Symptoms**: Red "Disconnected" status, error messages
+**Solutions**:
+- Verify qBittorrent is running
+- Check Web UI is enabled in qBittorrent
+- Confirm correct host, port, username, and password
+- Try `localhost` instead of `127.0.0.1`
+- Check firewall/antivirus settings
+
+### "No Torrents Showing"
+**Symptoms**: Empty torrent list, no data
+**Possible Causes**:
+- qBittorrent has no active torrents
+- Incorrect API permissions
+- qBittorrent version incompatibility
+
+### "Interface Not Loading"
+**Symptoms**: Blank screen, loading errors
+**Solutions**:
+- Clear browser cache (web version)
+- Restart the application
+- Check system resources (RAM, CPU)
+- Verify installation integrity
+
+## Interface Tour
+
+Once connected, let's explore the main interface:
+
+### Main Dashboard
+- **Statistics Cards**: Overall download/upload speeds, active torrents
+- **Quick Actions**: Add torrent, pause all, resume all
+- **Recent Activity**: Latest torrent additions and completions
+
+### Navigation Sidebar
+- **All Torrents**: Complete list of all torrents
+- **Downloading**: Currently active downloads
+- **Completed**: Finished torrents
+- **Paused**: Stopped torrents
+- **Active**: Torrents with network activity
+
+### Top Toolbar
+- **Search Bar**: Find torrents by name
+- **Filter Dropdown**: Filter by status, category, tags
+- **View Options**: List/Grid view toggle
+- **Settings**: Access configuration
+
+## Essential Settings to Configure
+
+### Download Preferences
+1. Go to **Settings → Downloads**
+2. Set your default download directory
+3. Configure speed limits (if needed)
+4. Set up automatic torrent management
+
+### Appearance
+1. Go to **Settings → Appearance**
+2. Choose your preferred theme
+3. Adjust interface density
+4. Configure notification preferences
+
+### Categories and Tags
+1. Go to **Settings → Categories**
+2. Create your initial categories
+3. Set up automatic categorization rules
+
+## Next Steps
+
+Now that you're set up:
+
+1. [Add your first torrent](../user-guide/torrent-management/adding-torrents)
+2. Explore the [Interface Overview](../user-guide/interface-overview)
+3. Learn about [Managing Downloads](../user-guide/torrent-management/managing-downloads)
+
+## Getting Help
+
+If you need assistance:
+- Check the [FAQ](../troubleshooting/faq)
+- Visit [Troubleshooting](../troubleshooting/) for common issues
+- Contact [Support](../troubleshooting/support)
