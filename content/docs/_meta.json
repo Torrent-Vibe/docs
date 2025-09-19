@@ -1,9 +1,0 @@
-{
-  "index": { "title": "Welcome to Torrent Vibe", "index": 0 },
-  "quick-start": { "title": "Quick Start", "index": 1 },
-  "user-guide": { "title": "User Guide", "index": 2 },
-  "advanced": { "title": "Advanced", "index": 3 },
-  "troubleshooting": { "title": "Troubleshooting", "index": 4 },
-  "developer": { "title": "Developer Documentation", "index": 5 },
-  "purchase": { "title": "Purchase", "index": 6 }
-}
