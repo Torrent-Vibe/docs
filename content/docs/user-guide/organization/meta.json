@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "categories",
+    "tags", 
+    "filters",
+    "search"
+  ]
+}

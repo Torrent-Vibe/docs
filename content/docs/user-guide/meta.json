@@ -3,5 +3,12 @@
   "torrent-management": "Torrent Management",
   "organization": "Organization",
   "monitoring": "Monitoring",
-  "preferences": "Preferences"
+  "preferences": "Preferences",
+  "pages": [
+    "interface-overview",
+    "torrent-management", 
+    "organization",
+    "monitoring",
+    "preferences"
+  ]
 }

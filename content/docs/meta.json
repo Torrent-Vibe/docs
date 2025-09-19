@@ -5,5 +5,14 @@
   "advanced": { "title": "Advanced", "index": 3 },
   "troubleshooting": { "title": "Troubleshooting", "index": 4 },
   "developer": { "title": "Developer Documentation", "index": 5 },
-  "purchase": { "title": "Purchase", "index": 6 }
+  "purchase": { "title": "Purchase", "index": 6 },
+  "pages": [
+    "index",
+    "quick-start",
+    "user-guide", 
+    "advanced",
+    "troubleshooting",
+    "developer",
+    "purchase"
+  ]
 }
