@@ -1,7 +1,5 @@
 {
-  "pages": [
-    "adding-torrents",
-    "managing-downloads",
-    "torrent-details"
-  ]
+  "adding-torrents": "Adding Torrents",
+  "managing-downloads": "Managing Downloads",
+  "torrent-details": "Torrent Details"
 }

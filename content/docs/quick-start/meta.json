@@ -1,7 +1,5 @@
 {
-  "pages": [
-    "installation",
-    "first-run",
-    "connecting-qbittorrent"
-  ]
+  "installation": "Installation",
+  "first-run": "First Run",
+  "connecting-qbittorrent": "Connecting to qBittorrent"
 }

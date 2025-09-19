@@ -1,7 +1,5 @@
 {
-  "pages": [
-    "bandwidth-control",
-    "speed-monitoring",
-    "real-time-stats"
-  ]
+  "bandwidth-control": "Bandwidth Control",
+  "speed-monitoring": "Speed Monitoring",
+  "real-time-stats": "Real-time Statistics"
 }

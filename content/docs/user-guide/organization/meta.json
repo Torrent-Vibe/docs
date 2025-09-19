@@ -1,8 +1,6 @@
 {
-  "pages": [
-    "categories",
-    "tags", 
-    "filters",
-    "search"
-  ]
+  "categories": "Categories",
+  "tags": "Tags",
+  "filters": "Filters",
+  "search": "Search"
 }
