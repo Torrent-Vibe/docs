@@ -1,16 +1,14 @@
 {
   "title": "Settings & Configuration",
   "pages": [
-    "downloads",
-    "speed",
-    "connection",
-    "bittorrent",
-    "web-ui",
-    "api-tokens",
-    "api-integration",
     "appearance",
+    "preferences",
+    "api-tokens",
     "servers",
-    "advanced",
-    "preferences"
+    "downloads",
+    "connection",
+    "speed",
+    "bittorrent",
+    "web-ui"
   ]
 }
