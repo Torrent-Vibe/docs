@@ -1,203 +1,31 @@
 ---
-title: Preferences Settings
+title: Preferences
 description: Configure polling settings and desktop integration
 ---
 
-The Preferences settings panel allows you to configure application behavior, polling intervals, and system integration options.
+Configure data polling intervals and desktop integration features for optimal performance.
 
 ![Preferences Settings](/screenshots/TorrentVibeScreenshot_PreferencesPollingSettings.png)
 
 ## Data Polling
 
-### Polling Settings
-Control how often Torrent Vibe checks for updates:
+**Polling Interval**: How often to check server for updates
+- Range: 1-60 seconds
+- Default: 3 seconds
+- Lower values = more responsive but higher server load
 
-- **Data Polling**: Update frequency from server
-  - **Interval**: How often to poll for changes
-  - **Default**: 3 seconds
-  - **Range**: 1-60 seconds
-  - **Impact**: Real-time vs. server load
+## Desktop Features (Electron only)
 
-### Polling Behavior
-Configure polling characteristics:
+**File Association Repair**: Fix .torrent file handling
+- Restores Torrent Vibe as default .torrent file opener
+- Updates system file associations safely
+- Applies to current user account only
 
-- **Adaptive Polling**: Adjust based on activity
-  - **Enabled**: Poll more frequently when active
-  - **Disabled**: Fixed polling interval
-  - **Smart**: Balance responsiveness and efficiency
+**Startup Options**: Control application launch behavior
+- Start with system: Auto-launch on boot
+- Start minimized: Launch in system tray
 
-## Desktop Features
-
-### File Association Repair
-Fix torrent file handling:
-
-- **Repair torrent file association**: Restore .torrent file links
-  - **Purpose**: Ensure Torrent Vibe opens .torrent files
-  - **Process**: Updates system file associations
-  - **Scope**: Current user account
-  - **Safety**: Non-destructive operation
-
-### Association Status
-Monitor file handling:
-
-- **Current Association**: Shows current .torrent handler
-- **Test Association**: Verify file opening works
-- **Reset Association**: Clear custom associations
-- **Default Application**: Set Torrent Vibe as default
-
-## System Integration
-
-### Startup Options
-Configure application launch behavior:
-
-- **Start with system**: Launch on boot
-  - **Enabled**: Auto-start with operating system
-  - **Disabled**: Manual launch only
-  - **Location**: System startup folder
-
-- **Start minimized**: Launch in background
-  - **Enabled**: Start in system tray
-  - **Disabled**: Show main window
-  - **Notification**: Show startup notification
-
-### System Tray
-Control tray icon behavior:
-
-- **Show tray icon**: Display system tray presence
-- **Minimize to tray**: Hide window to tray
-- **Tray notifications**: Show alerts in tray
-- **Tray menu**: Quick access menu
-
-## Notification Settings
-
-### Alert Preferences
-Configure notification behavior:
-
-- **Download complete**: Notify when downloads finish
-- **Error notifications**: Alert on download errors
-- **Connection status**: Notify connection changes
-- **Update available**: Alert on application updates
-
-### Notification Style
-Customize alert appearance:
-
-- **System notifications**: Use OS notification system
-- **In-app notifications**: Show within application
-- **Sound alerts**: Play notification sounds
-- **Custom sounds**: Choose alert sounds
-
-## Performance Preferences
-
-### Resource Usage
-Control application resource consumption:
-
-- **CPU priority**: Set process priority
-  - **Low**: Minimal CPU usage
-  - **Normal**: Standard priority
-  - **High**: Faster processing
-
-- **Memory management**: Control RAM usage
-  - **Conservative**: Minimize memory use
-  - **Balanced**: Standard memory usage
-  - **Aggressive**: Maximum performance
-
-## Privacy Options
-
-### Data Collection
-Control data sharing:
-
-- **Usage statistics**: Anonymous usage reporting
-  - **Enabled**: Help improve application
-  - **Disabled**: No data collection
-  - **Privacy**: Fully anonymous
-
-- **Crash reporting**: Automatic error reporting
-  - **Enabled**: Help fix bugs
-  - **Disabled**: Manual reporting only
-  - **Data**: Includes error details only
-
-## Backup & Sync
-
-### Configuration Backup
-Preserve settings:
-
-- **Auto-backup**: Automatic settings backup
-  - **Enabled**: Regular backup creation
-  - **Disabled**: Manual backup only
-  - **Location**: Default backup directory
-
-- **Backup frequency**: How often to backup
-  - **Daily**: Backup every day
-  - **Weekly**: Backup weekly
-  - **Manual**: User-initiated only
-
-### Settings Sync
-Synchronize preferences:
-
-- **Sync across devices**: Share settings
-  - **Enabled**: Sync via account
-  - **Disabled**: Local settings only
-  - **Account**: Requires user account
-
-## Accessibility
-
-### Interface Options
-Improve usability:
-
-- **Keyboard shortcuts**: Enable hotkeys
-- **Focus management**: Control focus behavior
-- **Screen reader**: Accessibility support
-- **High contrast**: Enhanced visibility
-
-### Language & Region
-Localization settings:
-
-- **Interface language**: Application language
-- **Date/time format**: Local formatting
-- **Number format**: Regional number display
-- **Currency display**: Local currency
-
-## Troubleshooting
-
-### Common Issues
-
-**Polling too frequent:**
-- Increase polling interval
-- Enable adaptive polling
-- Check server performance
-
-**File associations broken:**
-- Run repair tool
-- Check system permissions
-- Verify file type registration
-
-**High resource usage:**
-- Adjust CPU/memory settings
-- Disable unnecessary features
-- Check for background processes
-
-### Reset Options
-
-**Reset preferences:**
-- Restore default settings
-- Clear custom configurations
-- Preserve essential data
-
-**Factory reset:**
-- Complete settings reset
-- Clear all user data
-- Fresh application state
-
-## Monitoring
-
-### Performance Metrics
-Track application behavior:
-
-- **Polling statistics**: Monitor update frequency
-- **Resource usage**: Track CPU/memory
-- **Error logs**: Review application errors
-- **Backup status**: Verify backup integrity
-
----
-
-*Preferences settings customize Torrent Vibe to match your workflow while maintaining optimal performance and system integration.*
+**System Tray**: Configure tray icon behavior
+- Show tray icon: Enable system tray presence
+- Minimize to tray: Hide window to tray
+- Tray notifications: Show alerts in tray

@@ -1,160 +1,44 @@
 ---
-title: Speed Settings
+title: Speed
 description: Configure global and alternate speed limits
 ---
 
-The Speed settings panel allows you to control bandwidth usage by setting global and alternate speed limits for torrent downloads and uploads.
+Configure bandwidth limits for torrent downloads and uploads with global and scheduled alternate speeds.
 
 ![Speed Settings](/screenshots/TorrentVibeScreenshot_SpeedSettings.png)
 
 ## Global Rate Limits
 
-### Set Global and Alternate Rate Limits
-Configure baseline speed restrictions:
+**Upload Limit**: Maximum upload speed
+- Unlimited: No upload restrictions
+- Custom: Set limit in KiB/s
+- Affects seeding and network usage
 
-- **Upload Limit**: Maximum upload speed
-  - **∞ (Unlimited)**: No upload restrictions
-  - **Custom**: Set specific limit in KiB/s
-  - Affects seeding and overall network usage
+**Download Limit**: Maximum download speed
+- Unlimited: No download restrictions
+- Custom: Set limit in KiB/s
+- Controls download bandwidth
 
-- **Download Limit**: Maximum download speed
-  - **∞ (Unlimited)**: No download restrictions
-  - **Custom**: Set specific limit in KiB/s
-  - Controls download bandwidth consumption
+## Alternate Speed Limits
 
-## Alternate Rate Limits
+**Alt Upload**: Alternative upload speed
+- Applied during scheduled periods
+- Typically lower than global limits
 
-### Schedule Alternate Speed Limits
-Set up time-based speed restrictions:
+**Alt Download**: Alternative download speed
+- Reduced speed for off-peak hours
+- Helps manage bandwidth costs
 
-- **Alt Upload**: Alternative upload speed limit
-  - Applied during scheduled periods
-  - Typically lower than global limits
-  - Example: 10240 KiB/s (10 MB/s)
+**Schedule Alternate Limits**: Time-based switching
+- Enabled: Auto-switch between global and alternate
+- Disabled: Always use global limits
 
-- **Alt Download**: Alternative download speed limit
-  - Reduced speed for off-peak hours
-  - Helps manage bandwidth costs
-  - Example: 10240 KiB/s (10 MB/s)
+## Scheduler Configuration
 
-- **Schedule Alternate Rate Limits**: Enable time-based switching
-  - **Enabled**: Automatically switch between global and alternate limits
-  - **Disabled**: Always use global limits
+**From/To Times**: Set schedule periods
+- Define when to use alternate speeds
+- Useful for off-peak bandwidth management
 
-## Speed Limit Types
-
-### Global Limits (Always Active)
-- Primary speed restrictions
-- Applied 24/7 when alternate scheduling is disabled
-- Can be changed manually anytime
-- Default behavior for most users
-
-### Alternate Limits (Scheduled)
-- Secondary speed restrictions
-- Applied during configured time periods
-- Typically more restrictive
-- Useful for off-peak hours or cost management
-
-## Configuration Examples
-
-### Home Network (Unlimited)
-```
-Global Upload: ∞
-Global Download: ∞
-Alternate Upload: 5120 KiB/s
-Alternate Download: 10240 KiB/s
-Schedule: Enabled (off-peak hours)
-```
-
-### Limited Data Plan
-```
-Global Upload: 1024 KiB/s
-Global Download: 5120 KiB/s
-Alternate Upload: 512 KiB/s
-Alternate Download: 1024 KiB/s
-Schedule: Enabled (peak hours)
-```
-
-### Business Environment
-```
-Global Upload: 2048 KiB/s
-Global Download: 10240 KiB/s
-Alternate Upload: 512 KiB/s
-Alternate Download: 2048 KiB/s
-Schedule: Enabled (business hours)
-```
-
-## Scheduling Options
-
-### Time-Based Scheduling
-- Set specific hours for alternate limits
-- Useful for:
-  - **Night time**: Reduced speeds during sleep hours
-  - **Business hours**: Limited speeds during work
-  - **Peak hours**: Cost-based restrictions
-
-### Manual Override
-- Temporarily change limits without affecting schedule
-- Useful for:
-  - **Large downloads**: Temporarily increase limits
-  - **Background tasks**: Reduce limits for other activities
-  - **Testing**: Verify speed test results
-
-## Per-Torrent Speed Control
-
-In addition to global limits, you can set individual torrent speeds:
-
-1. Right-click on torrent in main list
-2. Select "Set Speed Limits"
-3. Configure custom upload/download limits
-4. Overrides global limits for that torrent
-
-## Performance Considerations
-
-### Upload Speed Guidelines
-- **Recommended**: 80-90% of maximum upload capacity
-- **Reasoning**: Leaves bandwidth for other network activities
-- **Impact**: Better download speeds and network responsiveness
-
-### Download Speed Guidelines
-- **Recommended**: 95-100% of maximum download capacity
-- **Reasoning**: Maximize available bandwidth
-- **Impact**: Faster completion times
-
-### Speed Testing
-- Use online speed tests to determine your connection limits
-- Test at different times to account for network variability
-- Adjust limits based on actual performance
-
-## Monitoring Speed Performance
-
-### Real-time Monitoring
-- View current speeds in main interface
-- Monitor speed graphs in statistics panel
-- Track bandwidth usage over time
-
-### Speed Limit Indicators
-- **∞ icon**: Unlimited speed (no restrictions)
-- **Number + KiB/s**: Active speed limit
-- **Grayed out**: Limit not currently active
-
-## Troubleshooting
-
-### Speed Not Applying
-- Check if alternate limits are active
-- Verify per-torrent overrides
-- Restart Torrent Vibe if needed
-
-### Inconsistent Speeds
-- Test actual internet connection
-- Check for background downloads
-- Monitor peer connections
-
-### Speed Too Low
-- Increase global limits gradually
-- Check for ISP throttling
-- Verify VPN/proxy configurations
-
----
-
-*Speed limits help manage bandwidth usage and prevent network congestion. Adjust based on your internet plan and usage patterns.*
+**Days**: Select active days
+- Choose which days to apply alternate limits
+- Weekend/weekday different settings

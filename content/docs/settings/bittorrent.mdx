@@ -1,184 +1,61 @@
 ---
-title: BitTorrent Settings
+title: BitTorrent
 description: Configure BitTorrent protocol and peer discovery options
 ---
 
-The BitTorrent settings panel provides advanced configuration options for the BitTorrent protocol, peer discovery mechanisms, and privacy features.
+Configure BitTorrent protocol settings, peer discovery mechanisms, and privacy features for optimal torrent performance.
 
 ![BitTorrent Settings](/screenshots/TorrentVibeScreenshot_BitTorrentSettings.png)
 
 ## Peer Discovery
 
-### Decentralized Network (DHT)
-Distributed hash table for peer discovery (helps find peers even when trackers are down):
+**DHT (Distributed Hash Table)**: Find peers without trackers
+- Enabled: Connect to DHT network (recommended)
+- Disabled: Rely only on trackers
 
-- **Enable DHT**: Find peers without trackers
-  - **Enabled**: Connect to DHT network (recommended for better connectivity)
-  - **Disabled**: Rely only on trackers (may reduce peer availability)
-  - **Recommended**: Enable for better peer finding
+**Peer Exchange (PEX)**: Share peer lists between connected peers
+- Enabled: Exchange peer information (recommended)
+- Disabled: No peer sharing (more private)
 
-### Peer Exchange (PEX)
-Share peer lists between connected peers (helps find more peers for faster downloads):
+**Local Peer Discovery (LSD)**: Find peers on local network
+- Enabled: Discover local peers (recommended for home)
+- Disabled: Skip local discovery
 
-- **Enable Peer Exchange**: Exchange peer information
-  - **Enabled**: Share peer lists with connected peers (recommended)
-  - **Disabled**: No peer list sharing (slightly more private but fewer peers)
-  - **Privacy**: Slightly reduces anonymity
+## Privacy & Security
 
-### Local Peer Discovery (LSD)
-Discover peers on local network (faster connections when downloading from devices on your home network):
+**Encryption Mode**: Control connection encryption
+- Prefer encryption: Use when available
+- Require encryption: Mandatory encryption
+- Disable encryption: No encryption
 
-- **Enable Local Peer Discovery**: Find local peers
-  - **Enabled**: Discover peers on same network (recommended for home use)
-  - **Disabled**: Skip local peer discovery (use for public networks)
+**Anonymous Mode**: Enhanced privacy protection
+- Enabled: Disable peer IP exchange
+- Disabled: Normal peer exchange
 
-## Privacy & Anonymity
+## Queue & Limits
 
-### Encryption Mode
-Control connection encryption:
+**Maximum active downloads**: Concurrent download limit
+- Default: 3
+- Control simultaneous downloads
 
-- **Encryption Mode**: Protocol encryption settings
-  - **Prefer encryption**: Use when available
-  - **Require encryption**: Mandatory encryption
-  - **Disable encryption**: No encryption
+**Maximum active uploads**: Concurrent upload limit
+- Default: 3
+- Control simultaneous uploads
 
-### Anonymous Mode
-Enhanced privacy features:
+**Maximum active torrents**: Total active torrent limit
+- Default: 5
+- Include downloading and seeding
 
-- **Anonymous Mode**: Privacy protections
-  - **Enabled**: Disable peer IP sharing
-  - **Disabled**: Normal peer exchange
-  - **Impact**: May reduce peer availability
+## Seeding Limits
 
-## Torrent Queuing
+**Seeding ratio limit**: Auto-stop seeding ratio
+- Unlimited: Seed indefinitely
+- Custom: Stop after reaching ratio
 
-### Maximum Active Torrents
-Control concurrent download limits:
+**Seeding time limit**: Auto-stop seeding time
+- Unlimited: Seed indefinitely
+- Custom: Stop after time period
 
-- **Maximum Active Torrents**: Simultaneous downloads
-  - **Default**: 3
-  - **Range**: 1-100
-  - **Higher**: More parallel downloads
-  - **Lower**: Better per-torrent speeds
-
-### Queue Management
-Automatic torrent handling:
-
-- **Queue stalled torrents**: Pause slow torrents
-- **Don't count slow torrents**: Exclude slow downloads from limits
-- **Maximum ratio**: Stop seeding at ratio limit
-- **Maximum seeding time**: Time-based seeding limits
-
-## Advanced Protocol Settings
-
-### Tracker Communication
-Configure tracker interaction:
-
-- **Tracker announce interval**: How often to contact trackers
-- **Minimum announce interval**: Minimum time between announces
-- **Announce to all trackers**: Contact all tracker tiers
-- **Scrape trackers**: Get peer counts from trackers
-
-### Peer Management
-Fine-tune peer connections:
-
-- **Maximum peer list size**: How many peers to track
-- **Peer timeout**: How long to wait for peer response
-- **Request timeout**: Timeout for piece requests
-- **Maximum outstanding requests**: Pending piece requests
-
-## Performance Optimization
-
-### For Fast Connections
-```
-DHT: Enabled
-PEX: Enabled
-LSD: Enabled
-Max Active Torrents: 5-10
-Encryption: Prefer
-```
-
-### For Limited Bandwidth
-```
-DHT: Enabled
-PEX: Disabled
-LSD: Enabled
-Max Active Torrents: 2-3
-Encryption: Require
-```
-
-### For Maximum Privacy
-```
-DHT: Enabled
-PEX: Disabled
-LSD: Disabled
-Max Active Torrents: 3
-Encryption: Require
-Anonymous Mode: Enabled
-```
-
-## Privacy Considerations
-
-### Balancing Privacy and Performance
-- **High Privacy**: Disable PEX, enable encryption, use anonymous mode
-- **Balanced**: Enable DHT/LSD, prefer encryption
-- **Performance First**: Enable all discovery methods, minimal encryption
-
-### VPN and Proxy Usage
-- **VPN**: Can use with any privacy settings
-- **Proxy**: Configure in Connection settings
-- **Combined**: VPN + encryption for maximum privacy
-
-## Troubleshooting
-
-### Peer Discovery Issues
-
-**Can't find peers:**
-- Enable DHT, PEX, and LSD
-- Check firewall settings
-- Verify port forwarding
-
-**Slow peer finding:**
-- Increase tracker announce frequency
-- Enable more discovery methods
-- Check internet connectivity
-
-### Performance Problems
-
-**Slow downloads:**
-- Adjust maximum active torrents
-- Check peer limits
-- Monitor connection quality
-
-**High CPU usage:**
-- Reduce peer connection limits
-- Disable unnecessary features
-- Check for malware
-
-### Privacy Concerns
-
-**IP leakage:**
-- Use VPN or proxy
-- Enable encryption
-- Disable PEX if concerned
-
-**Tracker blocking:**
-- Use alternative trackers
-- Enable DHT as backup
-- Check blocklists
-
-## Monitoring & Statistics
-
-### Peer Information
-- View connected peer counts
-- Monitor peer countries
-- Track connection success rates
-
-### Protocol Statistics
-- DHT node counts
-- Tracker response times
-- Peer exchange activity
-
----
-
-*BitTorrent settings directly impact download speeds, privacy, and network compatibility. Adjust based on your priorities.*
+**Inactive seeding time**: Stop seeding inactive torrents
+- Unlimited: Keep seeding
+- Custom: Stop after period of inactivity

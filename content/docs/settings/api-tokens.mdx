@@ -1,195 +1,32 @@
 ---
-title: API Tokens Settings
+title: API Tokens
 description: Configure external service integrations and API credentials
 ---
 
-The API Tokens settings panel allows you to configure integrations with external services for enhanced torrent management and metadata discovery.
+Configure API keys for external services to enhance torrent discovery, metadata fetching, and AI-powered features.
 
 ![API Tokens Settings](/screenshots/TorrentVibeScreenshot_APITokensSettings.png)
 
-## Discover Key (OMDb API)
+## Discover Services
 
-### OMDb Integration
-Movie and TV show metadata discovery:
+**OMDb API**: Movie/TV metadata discovery
+- Free API key from [omdbapi.com](https://omdbapi.com)
+- Automatic content identification for torrents
 
-- **OMDb API Key**: API key for OMDb service
-  - **Purpose**: Fetch movie/TV metadata
-  - **Usage**: Automatic content identification
-  - **Cost**: Free tier available
-  - **Registration**: Get key from omdbapi.com
+**M-Team Integration**: Private tracker search
+- API endpoint: [https://api.m-team.cc/api](https://api.m-team.cc/api)
+- Requires account API key
+- Configurable search filters and result limits
 
-### Configuration
-- **Input Field**: Enter your OMDb API key
-- **Visibility Toggle**: Show/hide key for security
-- **Validation**: Test key validity
-- **Status**: Connection status indicator
+## AI Integration
 
-## Private Tracker Integration
+**OpenAI API**: AI-powered content analysis
+- API key from [platform.openai.com](https://platform.openai.com)
+- Optional custom base URL and model selection
+- Used for torrent categorization and enhancement
 
-### M-Team Integration
-Private torrent tracker support:
+## Metadata Services
 
-- **API URL**: M-Team API endpoint
-  - **Default**: https://api.m-team.cc
-  - **Purpose**: Private tracker integration
-  - **Features**: Search private torrents
-
-- **API Key**: M-Team authentication key
-  - **Obtained**: From M-Team account settings
-  - **Security**: Private tracker credentials
-
-- **Results Per Page**: Search result limits
-  - **Default**: 20
-  - **Range**: 10-100
-  - **Performance**: Balance between speed and results
-
-## AI Integration (OpenAI)
-
-### OpenAI Integration
-AI-powered torrent analysis and enhancement:
-
-- **API Key**: OpenAI API key for AI features
-  - **Purpose**: AI analysis of torrent content
-  - **Usage**: Automatic content categorization and enhancement
-  - **Cost**: Pay-per-use model
-  - **Registration**: Get key from platform.openai.com
-
-- **Base URL**: Custom OpenAI API endpoint
-  - **Default**: https://api.openai.com/v1
-  - **Purpose**: Alternative API endpoints
-  - **Usage**: Custom OpenAI-compatible services
-
-- **Model**: AI model selection
-  - **Default**: gpt-3.5-turbo
-  - **Purpose**: Choose AI model for analysis
-  - **Options**: Various GPT models
-
-## Metadata Integration (TMDB)
-
-### TMDB Integration
-Movie and TV database integration:
-
-- **API Key**: TMDB API key
-  - **Purpose**: Enhanced movie/TV metadata
-  - **Usage**: Detailed content information
-  - **Cost**: Free tier available
-  - **Registration**: Get key from themoviedb.org
-
-## Configuration Workflow
-
-### Setting Up OMDb
-1. Visit omdbapi.com
-2. Register for free API key
-3. Enter key in Torrent Vibe settings
-4. Test connection
-
-### Setting Up Private Trackers
-1. Register with private tracker (M-Team)
-2. Generate API key in account settings
-3. Enter API URL and key
-4. Configure search preferences
-5. Test integration
-
-### Setting Up AI Integration
-1. Visit platform.openai.com
-2. Create account and get API key
-3. Enter API key in Torrent Vibe settings
-4. Configure model and base URL (optional)
-5. Test AI functionality
-
-### Setting Up TMDB
-1. Visit themoviedb.org
-2. Register for API key
-3. Enter key in Torrent Vibe settings
-4. Test metadata fetching
-
-## Feature Usage
-
-### Metadata Discovery
-- **Automatic**: Fetch movie/TV information
-- **Manual**: Search specific content
-- **Batch**: Process multiple torrents
-- **Caching**: Store metadata locally
-
-## Security Considerations
-
-### API Key Management
-- **Storage**: Secure local storage
-- **Encryption**: Keys stored encrypted
-- **Access**: Limited to application only
-- **Rotation**: Regular key updates
-
-### Privacy
-- **Data Sharing**: Minimal data sent to APIs
-- **Local Processing**: AI analysis done locally when possible
-- **No Tracking**: No usage data collection
-
-### Rate Limits
-- **API Limits**: Respect service rate limits
-- **Caching**: Cache results to reduce API calls
-- **Batch Processing**: Group requests efficiently
-
-## Troubleshooting
-
-### Connection Issues
-
-**OMDb not working:**
-- Verify API key is correct
-- Check internet connection
-- Test API key on omdbapi.com
-
-**Private tracker problems:**
-- Confirm API credentials
-- Check tracker status
-- Verify API endpoint
-
-**OpenAI integration issues:**
-- Check API key and permissions
-- Verify network connectivity
-- Test API key on platform.openai.com
-
-**TMDB integration issues:**
-- Ensure API key is valid
-- Check TMDB service status
-- Test API key on themoviedb.org
-
-### Performance Issues
-
-**Slow metadata fetching:**
-- Enable caching
-- Reduce concurrent requests
-- Check network speed
-
-## Cost Management
-
-### Free Tiers
-- **OMDb**: 1000 requests/day free
-- **TMDB**: 50 requests/second free
-- **OpenAI**: Pay-per-use model
-
-### Usage Monitoring
-- Track API usage across all services
-- Set budget limits and alerts
-- Monitor costs regularly
-- Optimize request patterns
-
-### Optimization
-- Use caching extensively
-- Batch requests when possible
-- Limit unnecessary API calls
-
-## Advanced Configuration
-
-### Custom Endpoints
-- Configure alternative API URLs
-- Set up proxy configurations
-- Customize request headers
-
-### Integration Settings
-- Configure timeout values
-- Set retry policies
-- Customize error handling
-
----
-
-*API integrations enhance Torrent Vibe with metadata features while maintaining user privacy and security.*
+**TMDB API**: Enhanced movie/TV database
+- Free API key from [themoviedb.org](https://themoviedb.org)
+- Detailed content information and posters

@@ -1,180 +1,53 @@
 ---
-title: Connection Settings
+title: Connection
 description: Configure peer connections and network settings
 ---
 
-The Connection settings panel allows you to configure how Torrent Vibe connects to peers, manages network traffic, and optimizes torrent performance.
+Configure peer connection encryption, network ports, connection limits, and proxy settings for optimal torrent performance.
 
 ![Connection Settings](/screenshots/TorrentVibeScreenshot_ConnectionSettings.png)
 
-## Peer Connection Protocol
+## Peer Connection
 
-### Peer Encryption
-Control encryption requirements for peer connections (encryption protects your data from ISP monitoring):
+**Encryption**: Control peer connection security
+- Disabled: Maximum compatibility (less secure)
+- Enabled: Require encrypted connections (recommended)
+- Forced: Force outgoing encryption (maximum security)
 
-- **Disabled**: No encryption requirements (maximum compatibility but less secure)
-  - Connects to both encrypted and unencrypted peers
-
-- **Enabled**: Require encrypted connections (better privacy, recommended for most users)
-  - Only connects to peers using encryption
-
-- **Forced**: Force outgoing encryption (maximum security but may impact connection speed)
-  - All outgoing connections use encryption
-
-### Anonymous Mode
-Enhanced privacy features (reduces the ability of others to track your torrent activity):
-
-- **Enable Anonymous Mode**: Activate privacy protections
-  - Disables peer exchange of IP addresses
-  - Reduces tracking capabilities
-  - May slightly impact download speeds due to fewer peers
+**Anonymous Mode**: Enhanced privacy protection
+- Disables peer IP exchange
+- Reduces tracking capabilities
+- May slightly impact download speeds
 
 ## Listening Port
 
-### Port Configuration
-Set up the port for incoming connections:
+**Port**: Network port for incoming connections
+- Default: 6881 (BitTorrent standard)
+- Range: 1024-65535
+- Random: Generate available port automatically
 
-- **Port**: Network port for torrent connections
-  - **Default**: 6881 (BitTorrent standard)
-  - **Range**: 1024-65535
-  - **Random**: Generate random available port
+**UPnP/NAT-PMP**: Automatic port forwarding
+- Enabled: Auto-configure router (recommended)
+- Disabled: Manual port forwarding required
 
-- **Use UPnP / NAT-PMP**: Automatic port forwarding (lets Torrent Vibe configure your router automatically)
-  - **Enabled**: Automatically configure router (recommended for home networks)
-  - **Disabled**: Manual port forwarding required (for advanced users or specific network setups)
+## Connection Limits
 
-## Network Optimization
+**Global maximum connections**: Total peer connections
+- Default: 500
+- Increase for faster networks
+- Decrease for limited bandwidth
 
-### Connection Limits
-Control network resource usage:
+**Maximum connections per torrent**: Per-torrent limit
+- Default: 100
+- Balance bandwidth across multiple torrents
 
-- **Global maximum connections**: Total number of peer connections
-  - Default: 500
-  - Increase for faster networks
-  - Decrease if bandwidth is limited
+## Network Settings
 
-- **Max connections per torrent**: Limit connections for each torrent
-  - Default: 100
-  - Balance bandwidth across multiple torrents
-  - Prevent a single torrent from using too many resources
+**Proxy Server**: Route connections through proxy
+- Types: None, HTTP, SOCKS4, SOCKS5
+- Authentication support
+- Host and port configuration
 
-### Bandwidth Management
-Fine-tune network usage:
-
-- **Speed limit**: Set maximum upload/download speeds
-  - Prevents network saturation
-  - Ensures bandwidth for other activities
-
-- **Enable bandwidth scheduler**: Schedule speed limits
-  - Configure different speeds for different times
-  - Useful for managing bandwidth during peak usage
-
-## Advanced Network Settings
-
-### Proxy Configuration
-Connect through a proxy server:
-
-- **Proxy type**: None, HTTP, SOCKS4, SOCKS5
-- **Host**: Proxy server address
-- **Port**: Proxy server port
-- **Authentication**: Username/password if required
-
-### IP Filtering
-Control which IPs can connect:
-
-- **IP filtering**: Allow/block specific IP ranges
-- **Filter list**: Import/export filter lists
-- **Auto-update**: Keep filters up to date automatically
-
-## Security Considerations
-
-### Encryption Best Practices
-- **Home networks**: Use "Enabled" for balanced security
-- **Public WiFi**: Use "Forced" to ensure maximum security
-- **Corporate networks**: Use a VPN with forced encryption
-
-### Port Forwarding
-- **Router settings**: Enable UPnP for automatic configuration
-- **Manual forwarding**: Forward the configured port to your computer
-- **Firewall**: Allow Torrent Vibe through the firewall
-
-## Performance Tuning
-
-### Fast Connection (100+ Mbps)
-```
-Port: 6881
-Global connections: 1000
-Connections per torrent: 200
-Encryption: Disabled
-UPnP: Enabled
-```
-
-### Limited Bandwidth
-```
-Port: Random
-Global connections: 200
-Connections per torrent: 50
-Encryption: Enabled
-UPnP: Enabled
-```
-
-### High Security
-```
-Port: Custom (5xxxx)
-Global connections: 500
-Connections per torrent: 100
-Encryption: Forced
-Anonymous Mode: Enabled
-```
-
-## Troubleshooting
-
-### Connection Issues
-
-**Cannot connect to peers:**
-- Check firewall settings
-- Verify port forwarding
-- Test port accessibility
-
-**Slow connection speeds:**
-- Adjust connection limits
-- Check encryption settings
-- Monitor peer quality
-
-**Port forwarding issues:**
-- Disable/enable UPnP
-- Check router configuration
-- Use port checking tools
-
-### Network Diagnostics
-
-**Test basic connectivity:**
-- Ping known hosts
-- Check DNS resolution
-- Verify internet connectivity
-
-**Monitor connections:**
-- View peer list
-- Check connection statistics
-- Monitor bandwidth usage
-
-**Advanced troubleshooting:**
-- Enable debug logging
-- Check system firewall
-- Test with different ports
-
-## Monitoring and Maintenance
-
-### Connection Statistics
-- View active connections
-- Monitor connection success rates
-- Track peer countries/regions (if enabled)
-
-### Regular Maintenance
-- Regularly clear connection cache
-- Periodically update IP filters
-- Monitor blocked ports
-
----
-
-*Proper connection settings ensure optimal torrent performance while maintaining security and network compatibility.*
+**IP Filtering**: Block/allow specific IP ranges
+- Import/export filter lists
+- Auto-update capabilities

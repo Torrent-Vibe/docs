@@ -1,125 +1,49 @@
 ---
-title: Downloads Settings
+title: Downloads
 description: Configure download paths, behaviors, and torrent management
 ---
 
-The Downloads settings panel allows you to configure how Torrent Vibe handles torrent downloads, file management, and automatic behaviors.
+Configure download paths, file management, and automatic behaviors for torrent downloads.
 
 ![Downloads Settings](/screenshots/TorrentVibeScreenshot_DownloadsSettings.png)
 
-## Default Path & Behavior
+## Default Save Path
 
-### Configure Default Path and Behavior
-This section controls the basic download configuration:
+**Save Path**: Default download location
+- Browse and select directory
+- Supports local and network paths
+- Can be overridden per torrent
 
-- **Save Path**: Default location for downloaded files
-  - Click folder icon to browse and select directory
-  - Supports both local and network paths
-  - Can be overridden per torrent
+## Torrent Adding Behavior
 
-### When Adding Torrent
-Control automatic behaviors when adding new torrents:
+**Create Subfolder**: Auto-create torrent folders
+- Off: All files in main path
+- On: Create folder with torrent name
 
-- **Create Subfolder**: Automatically create subfolders for torrents
-  - **Off**: All files in main save path
-  - **On**: Creates folder with torrent name
+**Start Torrent**: Auto-start downloads
+- On: Begin download immediately (default)
+- Off: Add in paused state
 
-- **Start Torrent Automatically**: Begin download immediately after adding
-  - **On**: Downloads start right away (default)
-  - **Off**: Torrents added in paused state
+**Delete .torrent Files**: Clean up after adding
+- Off: Keep original files
+- On: Remove after successful addition
 
-- **Delete Torrent Files Afterwards**: Clean up .torrent files after adding
-  - **Off**: Keep original .torrent files
-  - **On**: Remove .torrent files after successful addition
+## File Management
 
-## Torrent Management
+**Pre-allocate Disk Space**: Reserve space upfront
+- Off: Download as space available
+- On: Reserve full size (faster, needs free space)
 
-### Advanced File Handling
-Configure how Torrent Vibe manages downloaded files:
+**Append .!qb Extension**: Mark incomplete files
+- Off: Normal filenames during download
+- On: Add .!qb to incomplete files
 
-- **Pre-allocate Disk Space**: Reserve space before downloading
-  - **Off**: Download as space becomes available
-  - **On**: Reserve full file size upfront (faster but requires free space)
+**Automatic Torrent Management**: Smart categorization
+- On: Auto-assign categories by file type
+- Off: Manual category assignment
 
-- **Append .!qb Extension**: Mark incomplete files
-  - **Off**: Files have normal names during download
-  - **On**: Adds .!qb to incomplete files (qBittorrent style)
+## External Programs
 
-- **Automatic Torrent Management**: Smart categorization
-  - **On**: Automatically assign categories based on file types
-  - **Off**: Manual category assignment only
-
-- **Relocate When Category Changes**: Move files when re-categorized
-  - **On**: Files move to new category's save path
-  - **Off**: Files stay in original location
-
-## Usage Scenarios
-
-### For Media Libraries
-```
-Create Subfolder: On
-Automatic Torrent Management: On
-Pre-allocate Disk Space: On
-```
-Best for organizing movies, TV shows, and music collections.
-
-### For Software Downloads
-```
-Create Subfolder: Off
-Start Torrent Automatically: On
-Delete Torrent Files Afterwards: On
-```
-Streamlined for quick software installations and updates.
-
-### For Large Files
-```
-Pre-allocate Disk Space: On
-Append .!qb Extension: On
-Automatic Torrent Management: Off
-```
-Ensures sufficient space and prevents accidental use of incomplete files.
-
-## Best Practices
-
-### Storage Management
-- Use dedicated drives for large download libraries
-- Enable pre-allocation for SSDs to prevent wear
-- Set up different save paths for different content types
-
-### Organization
-- Enable automatic management for consistent categorization
-- Use descriptive category names
-- Regularly clean up completed torrents
-
-### Performance
-- Pre-allocate space for better performance on mechanical drives
-- Use subfolders to prevent filename conflicts
-- Enable automatic starting for immediate downloads
-
-## Troubleshooting
-
-### Common Issues
-
-**"Insufficient disk space" errors:**
-- Check pre-allocation settings
-- Verify available space in save path
-- Clear temporary files
-
-**Files not organizing correctly:**
-- Review automatic management rules
-- Check category configurations
-- Verify file type associations
-
-**Slow download starts:**
-- Disable pre-allocation for slower drives
-- Check disk I/O performance
-- Verify antivirus exclusions
-
-### Recovery Options
-- Manually move files and update torrent locations
-- Use "Force recheck" for corrupted downloads
-- Reconfigure save paths as needed
-
----
-
-*Download settings apply to new torrents. Existing torrents may need manual reconfiguration.*
+**Run external program on torrent finished**: Execute custom commands
+- Command template with variables
+- Useful for notifications or post-processing
