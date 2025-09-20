@@ -1,6 +1,15 @@
 import '@/app/global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
 import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Torrent Vibe Documentation',
+  description: 'A modern, cross-platform web/desktop interface that replaces the default qBittorrent WebUI. Offers real-time monitoring, advanced filtering & tagging, fine-grained bandwidth/scheduling controls, and dark-mode UI.',
+  keywords: ['torrent', 'qbittorrent', 'torrent client', 'bittorrent', 'web ui', 'cross-platform'],
+  authors: [{ name: 'Torrent Vibe Team' }],
+  viewport: 'width=device-width, initial-scale=1',
+};
 
 const inter = Inter({
   subsets: ['latin'],
