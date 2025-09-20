@@ -1,0 +1,196 @@
+---
+title: API Tokens Settings
+description: Configure external service integrations and API credentials
+---
+
+# API Tokens Settings
+
+The API Tokens settings panel allows you to configure integrations with external services for enhanced torrent management, metadata discovery, and AI-powered features.
+
+![API Tokens Settings](/screenshots/TorrentVibeScreenshot_APITokensSettings.png)
+
+## Discover Key (OMDb API)
+
+### OMDb Integration
+Movie and TV show metadata discovery:
+
+- **OMDb API Key**: API key for OMDb service
+  - **Purpose**: Fetch movie/TV metadata
+  - **Usage**: Automatic content identification
+  - **Cost**: Free tier available
+  - **Registration**: Get key from omdbapi.com
+
+### Configuration
+- **Input Field**: Enter your OMDb API key
+- **Visibility Toggle**: Show/hide key for security
+- **Validation**: Test key validity
+- **Status**: Connection status indicator
+
+## AI Providers (OpenAI)
+
+### OpenAI Integration
+AI-powered torrent intelligence:
+
+- **Enable AI Providers**: Activate OpenAI features
+  - **Enabled**: Use AI for torrent analysis
+  - **Disabled**: Disable AI features
+  - **Features**: Name parsing, content classification
+
+### OpenAI API Key
+Authentication for OpenAI services:
+
+- **API Key**: Your OpenAI API key
+  - **Security**: Keep confidential
+  - **Visibility**: Toggle show/hide
+  - **Models**: Supports GPT models
+
+### Base URL Configuration
+Custom API endpoint:
+
+- **OpenAI Base URL**: API endpoint URL
+  - **Default**: https://api.openai.com/v1
+  - **Custom**: For proxies or alternative providers
+  - **Compatibility**: OpenAI-compatible APIs
+
+## Private Tracker Integration
+
+### M-Team Integration
+Private torrent tracker support:
+
+- **API URL**: M-Team API endpoint
+  - **Default**: https://api.m-team.cc
+  - **Purpose**: Private tracker integration
+  - **Features**: Search private torrents
+
+- **API Key**: M-Team authentication key
+  - **Obtained**: From M-Team account settings
+  - **Security**: Private tracker credentials
+
+- **Results Per Page**: Search result limits
+  - **Default**: 20
+  - **Range**: 10-100
+  - **Performance**: Balance between speed and results
+
+## Configuration Workflow
+
+### Setting Up OMDb
+1. Visit omdbapi.com
+2. Register for free API key
+3. Enter key in Torrent Vibe settings
+4. Test connection
+
+### Setting Up OpenAI
+1. Visit platform.openai.com
+2. Create account and get API key
+3. Enter key in settings
+4. Configure base URL if needed
+5. Enable AI providers
+
+### Setting Up Private Trackers
+1. Register with private tracker (M-Team)
+2. Generate API key in account settings
+3. Enter API URL and key
+4. Configure search preferences
+5. Test integration
+
+## Feature Usage
+
+### Metadata Discovery
+- **Automatic**: Fetch movie/TV information
+- **Manual**: Search specific content
+- **Batch**: Process multiple torrents
+- **Caching**: Store metadata locally
+
+### AI-Powered Analysis
+- **Name Parsing**: Extract content information from filenames
+- **Classification**: Categorize torrent content
+- **Quality Detection**: Identify video/audio quality
+- **Language Detection**: Determine content language
+
+### Private Tracker Search
+- **Integrated Search**: Search private trackers
+- **Category Filtering**: Filter by content type
+- **Quality Preferences**: Set preferred quality levels
+- **Automatic Downloads**: Set up auto-download rules
+
+## Security Considerations
+
+### API Key Management
+- **Storage**: Secure local storage
+- **Encryption**: Keys stored encrypted
+- **Access**: Limited to application only
+- **Rotation**: Regular key updates
+
+### Privacy
+- **Data Sharing**: Minimal data sent to APIs
+- **Local Processing**: AI analysis done locally when possible
+- **No Tracking**: No usage data collection
+
+### Rate Limits
+- **API Limits**: Respect service rate limits
+- **Caching**: Cache results to reduce API calls
+- **Batch Processing**: Group requests efficiently
+
+## Troubleshooting
+
+### Connection Issues
+
+**OMDb not working:**
+- Verify API key is correct
+- Check internet connection
+- Test API key on omdbapi.com
+
+**OpenAI errors:**
+- Confirm API key validity
+- Check account credits
+- Verify base URL configuration
+
+**Private tracker problems:**
+- Confirm API credentials
+- Check tracker status
+- Verify API endpoint
+
+### Performance Issues
+
+**Slow metadata fetching:**
+- Enable caching
+- Reduce concurrent requests
+- Check network speed
+
+**AI processing delays:**
+- Monitor API usage
+- Consider local alternatives
+- Optimize batch sizes
+
+## Cost Management
+
+### Free Tiers
+- **OMDb**: 1000 requests/day free
+- **OpenAI**: Pay-per-use model
+- **Private Trackers**: Varies by tracker
+
+### Usage Monitoring
+- Track API usage
+- Set budget limits
+- Monitor costs regularly
+
+### Optimization
+- Use caching extensively
+- Batch requests when possible
+- Limit unnecessary API calls
+
+## Advanced Configuration
+
+### Custom Endpoints
+- Configure alternative API URLs
+- Set up proxy configurations
+- Customize request headers
+
+### Integration Settings
+- Configure timeout values
+- Set retry policies
+- Customize error handling
+
+---
+
+*API integrations enhance Torrent Vibe with metadata and AI features while maintaining user privacy and security.*

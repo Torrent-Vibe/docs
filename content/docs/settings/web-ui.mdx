@@ -1,0 +1,195 @@
+---
+title: Web UI Settings
+description: Configure remote access through web interface
+---
+
+# Web UI Settings
+
+The Web UI settings panel allows you to configure remote access to Torrent Vibe through a web browser, enabling management from any device.
+
+![Web UI Settings](/screenshots/TorrentVibeScreenshot_WebUISettings.png)
+
+## Web User Interface (Remote Control)
+
+### Port Configuration
+Set up the web server port:
+
+- **Port**: Listening port for web interface
+  - **Default**: 8080
+  - **Range**: 1-65535
+  - **Common**: 8080, 8090, 8112
+  - **Firewall**: Ensure port is accessible
+
+### HTTPS Security
+Enable secure encrypted connections:
+
+- **Use HTTPS**: Enable SSL/TLS encryption
+  - **Enabled**: Secure https:// connections
+  - **Disabled**: Standard http:// connections
+  - **Recommended**: Enable for remote access
+
+### Certificate Management
+Configure SSL certificates for HTTPS:
+
+- **Certificate Path**: Path to SSL certificate file
+  - **Format**: .pem or .crt file
+  - **Location**: Full path to certificate file
+  - **Permissions**: Readable by application
+
+- **Key Path**: Path to private key file
+  - **Format**: .key file
+  - **Location**: Full path to private key
+  - **Security**: Keep private key secure
+
+## Authentication & Access
+
+### User Credentials
+Set up web interface login:
+
+- **Username**: Web UI login username
+  - **Default**: admin
+  - **Security**: Use strong, unique username
+
+- **Password**: Web UI login password
+  - **Security**: Use complex password
+  - **Change**: Regular password updates
+
+### Access Control
+Control who can access the Web UI:
+
+- **Allowed IP ranges**: Restrict access by IP
+  - **Local**: 127.0.0.1, 192.168.1.0/24
+  - **Remote**: Specific IP addresses
+  - **Security**: Limit to trusted networks
+
+## Network Configuration
+
+### UPnP Port Forwarding
+Automatic router configuration:
+
+- **Use UPnP/NAT-PMP**: Auto-configure port forwarding
+  - **Enabled**: Automatic port forwarding
+  - **Disabled**: Manual router configuration
+  - **Compatibility**: Check router support
+
+### Advanced Options
+Fine-tune web server behavior:
+
+- **Maximum connections**: Concurrent web connections
+- **Session timeout**: Auto-logout after inactivity
+- **Rate limiting**: Prevent abuse
+- **CORS settings**: Cross-origin access control
+
+## Security Best Practices
+
+### HTTPS Setup
+1. **Obtain Certificate**: Use Let's Encrypt or purchase SSL certificate
+2. **Install Certificate**: Place files in secure location
+3. **Configure Paths**: Set certificate and key paths
+4. **Test Connection**: Verify https:// access works
+
+### Access Security
+- **Strong Passwords**: Use password manager
+- **IP Restrictions**: Limit to local network for remote access
+- **VPN**: Use VPN for remote connections
+- **Regular Updates**: Keep certificates current
+
+### Network Security
+- **Firewall Rules**: Allow only necessary ports
+- **Port Forwarding**: Forward only Web UI port
+- **Monitor Access**: Check access logs regularly
+
+## Remote Access Setup
+
+### Local Network Access
+```
+Port: 8080
+HTTPS: Disabled (or Enabled with self-signed cert)
+IP Restrictions: Local subnet only
+UPnP: Enabled
+```
+
+### Remote Access (VPN)
+```
+Port: 8080 or 443
+HTTPS: Enabled
+IP Restrictions: VPN subnet
+UPnP: Disabled (manual forwarding)
+VPN: Required for access
+```
+
+### Public Remote Access
+```
+Port: 443 (standard HTTPS)
+HTTPS: Enabled (valid certificate)
+IP Restrictions: None (use strong auth)
+UPnP: Disabled
+Domain: Use dynamic DNS
+```
+
+## Web Interface Features
+
+### Available Through Web UI
+- **Torrent Management**: Add, remove, control torrents
+- **File Management**: Browse and manage downloaded files
+- **Settings Access**: Most settings available remotely
+- **Statistics**: View detailed statistics and logs
+- **Search**: Search torrents and files
+
+### Limitations
+- **File Upload**: Limited by browser and network
+- **Drag & Drop**: May not work in all browsers
+- **Notifications**: Browser notification permissions required
+- **Performance**: Dependent on network speed
+
+## Troubleshooting
+
+### Connection Issues
+
+**Can't access Web UI:**
+- Check if service is running
+- Verify port configuration
+- Test with http://localhost:port
+- Check firewall settings
+
+**HTTPS not working:**
+- Verify certificate files exist
+- Check file permissions
+- Test certificate validity
+- Check port 443 availability
+
+**Authentication problems:**
+- Verify username/password
+- Check case sensitivity
+- Reset password if needed
+
+### Performance Issues
+
+**Slow loading:**
+- Check network connection
+- Reduce concurrent connections
+- Enable compression
+- Monitor server resources
+
+**Connection timeouts:**
+- Increase timeout settings
+- Check server load
+- Verify network stability
+
+## Monitoring & Maintenance
+
+### Access Logs
+- Monitor login attempts
+- Track access patterns
+- Identify security issues
+- Review error logs
+
+### Regular Maintenance
+- Update SSL certificates
+- Rotate passwords regularly
+- Review access logs
+- Update software regularly
+
+---
+
+*Web UI enables convenient remote management but requires careful security configuration for safe remote access.*

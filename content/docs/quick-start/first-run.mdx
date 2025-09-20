@@ -5,28 +5,93 @@ description: Get started with Torrent Vibe immediately
 
 # Quick Start
 
-Torrent Vibe is ready to use out of the box. Just double-click to open and start managing your torrents.
+Torrent Vibe is a native macOS application that's ready to use right after installation. Follow these steps to get started with torrent management.
 
-## Starting the Application
+## Installation & First Launch
 
-Double-click the Torrent Vibe icon to launch the application.
+1. Download and install Torrent Vibe on your macOS system
+2. Double-click the application icon to launch
+3. The main interface will open showing the torrent management dashboard
+
+![Main Interface](/screenshots/TorrentVibeScreenshot_MainInterface.jpeg)
 
 ## Initial Setup
 
-When you first open Torrent Vibe, you'll need to connect it to your qBittorrent:
+### Empty State
+When you first launch Torrent Vibe, you'll see an empty interface ready for your first torrent.
 
-### qBittorrent Connection
-Enter your qBittorrent Web UI details:
-- **Host**: Usually `localhost` or `127.0.0.1`
-- **Port**: Default is `8080`
-- **Username**: Your qBittorrent username
-- **Password**: Your qBittorrent password
+![Empty Interface](/screenshots/TorrentVibeScreenshot_MainEmptyInterface.jpeg)
 
-### Interface Preferences
-- Choose theme: Light/Dark/System
-- Set language
-- Configure notifications
+The interface shows:
+- **Add Button**: Blue "+" button to add new torrents
+- **Drag & Drop Area**: Drop torrent files or magnet links here
+- **Connection Status**: Green banner when successfully connected
 
-## Manual Configuration
+### Connecting to qBittorrent
 
-If needed, you can configure settings manually in the preferences panel.
+To connect to your qBittorrent server:
+
+1. The application will prompt for connection details
+2. Enter your server information:
+   - **Host**: Server address (e.g., `127.0.0.1` or remote IP)
+   - **Port**: Web UI port (default: `8080`)
+   - **Username**: Your qBittorrent username
+   - **Password**: Your qBittorrent password
+   - **HTTPS**: Enable for secure connections
+
+![Connection Dialog](/screenshots/TorrentVibeScreenshot_qBittorrent_Connection_Dialog.jpeg)
+
+### Connection Success
+Once connected, you'll see a success notification and can begin managing torrents.
+
+## Adding Your First Torrent
+
+### Method 1: Add Button
+1. Click the blue "+" button in the main interface
+2. Choose to add from torrent file or magnet link
+3. Configure download settings as needed
+
+### Method 2: Drag & Drop
+Simply drag torrent files or magnet links directly into the application window.
+
+![Add Torrent Dialog](/screenshots/TorrentVibeScreenshot_AddTorrentDialog.png)
+
+### Torrent Settings
+When adding torrents, you can configure:
+- **Save Path**: Where to store downloaded files
+- **Category**: Organize torrents by category
+- **Torrent Management**: Skip hash checking, sequential download, etc.
+- **Start Options**: Begin download immediately or manually
+
+## Basic Operations
+
+### Monitoring Downloads
+- View real-time download/upload speeds
+- Track progress with visual progress bars
+- Monitor peer connections and file status
+
+![Download Progress](/screenshots/TorrentVibeScreenshot_DownloadingProgress.jpeg)
+
+### Managing Torrents
+- **Pause/Resume**: Control download states
+- **Categories**: Organize by type (Movies, Software, etc.)
+- **Priority**: Set download priorities
+- **File Selection**: Choose specific files to download
+
+## Next Steps
+
+Once you're comfortable with basic operations:
+
+1. **[Configure Settings](settings/)**: Customize appearance, speeds, and connections
+2. **[Advanced Features](advanced/)**: Explore API integrations and automation
+3. **[Multi-Server Setup](advanced/multi-server/)**: Connect to multiple qBittorrent instances
+
+## Getting Help
+
+- Check the [User Guide](user-guide/) for detailed feature explanations
+- Visit [Troubleshooting](troubleshooting/) for common issues
+- Access [Source Code](advanced/source-code/) for development information
+
+---
+
+*Tip: Torrent Vibe supports both local qBittorrent instances and remote servers for flexible torrent management.*

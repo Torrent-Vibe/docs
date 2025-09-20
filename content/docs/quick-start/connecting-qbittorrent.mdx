@@ -1,40 +1,168 @@
 ---
 title: Connecting to qBittorrent
-description: Connect Torrent Vibe to qBittorrent
+description: Connect Torrent Vibe to qBittorrent Web UI
 ---
 
 # Connecting to qBittorrent
 
-Torrent Vibe connects to qBittorrent Web UI.
+Torrent Vibe connects to qBittorrent through its Web UI interface, allowing you to manage your torrents remotely while maintaining local control.
 
-## Enable qBittorrent Web UI
+## Prerequisites
 
-1. Open qBittorrent → Tools → Preferences
-2. Go to Web UI tab
-3. Check "Enable Web User Interface"
-4. Set username and password
-5. Set port (default: 8080)
+Before connecting, ensure qBittorrent Web UI is enabled:
 
-## Connect in Torrent Vibe
+1. Open qBittorrent application
+2. Go to **Tools → Preferences**
+3. Navigate to **Web UI** tab
+4. Check **"Enable Web User Interface (Remote control)"**
+5. Set a username and password
+6. Configure the port (default: 8080)
+7. Optionally enable HTTPS for secure connections
+
+## Connection Setup
+
+### Using the Connection Dialog
 
 1. Launch Torrent Vibe
-2. Enter connection details:
-   - Host: `localhost` or IP
-   - Port: `8080`
-   - Username/password from qBittorrent
+2. The application will prompt for connection details
+3. Fill in the following information:
 
-## Connection Types
+![Connection Dialog](/screenshots/TorrentVibeScreenshot_qBittorrent_Connection_Dialog.jpeg)
 
-- **Local**: `localhost` (same machine)
-- **Network**: IP address (same network)
-- **Remote**: Public IP (outside network, use HTTPS)
+#### Required Fields:
+- **Host**: Server address
+  - Local: `127.0.0.1` or `localhost`
+  - Network: IP address of the qBittorrent machine
+  - Remote: Public IP or domain name
 
-## Troubleshooting
+- **Port**: Web UI listening port
+  - Default: `8080`
+  - Custom: Any port configured in qBittorrent
 
-- **Connection refused**: Check if qBittorrent is running and port is correct
-- **Auth failed**: Verify username/password
-- **Timeout**: Check network and reduce active torrents
+- **Username**: qBittorrent Web UI username
+- **Password**: qBittorrent Web UI password
 
-## Multiple Servers
+#### Optional Settings:
+- **Use HTTPS**: Enable for secure encrypted connections
+  - Requires HTTPS to be enabled in qBittorrent Web UI settings
 
-Add multiple qBittorrent instances in Settings → Server Management.
+### Connection Types
+
+#### Local Connection
+- **Host**: `localhost` or `127.0.0.1`
+- **Port**: `8080` (default)
+- **Best for**: Same machine setup
+
+#### Network Connection
+- **Host**: Local IP address (e.g., `192.168.1.100`)
+- **Port**: Configured Web UI port
+- **Best for**: Same network access
+
+#### Remote Connection
+- **Host**: Public IP or domain name
+- **Port**: Forwarded port from router
+- **HTTPS**: Recommended for security
+- **Best for**: External access
+
+## Testing Connection
+
+After entering details:
+1. Click **"Save and continue"**
+2. Torrent Vibe will attempt to connect
+3. Success shows green connection banner
+4. Failure displays error message with troubleshooting tips
+
+![Connection Success](/screenshots/TorrentVibeScreenshot_MainEmptyInterface.jpeg)
+
+## Advanced Configuration
+
+### Web UI Settings in qBittorrent
+
+For optimal compatibility:
+
+1. **Web UI Tab**:
+   - Enable Web UI
+   - Set strong username/password
+   - Choose port (avoid conflicts)
+
+2. **Connection Tab**:
+   - Configure listening port
+   - Enable UPnP/NAT-PMP if needed
+   - Set connection limits
+
+3. **BitTorrent Tab**:
+   - Configure protocol settings
+   - Set peer limits
+   - Enable DHT and PEX
+
+### Security Considerations
+
+- **HTTPS**: Always enable for remote access
+- **Strong Credentials**: Use complex username/password
+- **Firewall**: Ensure port is accessible
+- **VPN**: Consider for additional security
+
+## Troubleshooting Connection Issues
+
+### Common Problems:
+
+#### Connection Refused
+- Verify qBittorrent is running
+- Check Web UI is enabled
+- Confirm correct port number
+- Test with browser: `http://localhost:8080`
+
+#### Authentication Failed
+- Double-check username/password
+- Ensure credentials match qBittorrent settings
+- Try resetting Web UI password
+
+#### Timeout Errors
+- Check network connectivity
+- Verify firewall settings
+- Reduce active torrents if overloaded
+- Try different port
+
+#### HTTPS Issues
+- Ensure HTTPS enabled in both applications
+- Check certificate configuration
+- Verify port forwarding for HTTPS
+
+### Diagnostic Steps:
+
+1. **Test Web UI Directly**:
+   - Open browser to `http://localhost:8080`
+   - Verify qBittorrent Web UI loads
+   - Test login credentials
+
+2. **Check Network**:
+   - Ping the target host
+   - Verify port accessibility
+   - Check firewall rules
+
+3. **Review Logs**:
+   - Check qBittorrent logs
+   - Monitor Torrent Vibe connection attempts
+
+## Multi-Server Setup
+
+Torrent Vibe supports connecting to multiple qBittorrent instances:
+
+1. Go to **Settings → Servers**
+2. Click **"+ Add"** to add new server
+3. Configure connection details for each server
+4. Set up path mappings for different storage locations
+
+![Server Settings](/screenshots/TorrentVibeScreenshot_ServersSettings.png)
+
+## Connection Monitoring
+
+Once connected, monitor your connection status:
+- Real-time connection health
+- Server response times
+- Active torrent counts
+- Bandwidth usage statistics
+
+---
+
+*Note: Torrent Vibe acts as a client to qBittorrent Web UI and doesn't replace the qBittorrent application itself.*

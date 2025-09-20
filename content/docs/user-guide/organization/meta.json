@@ -1,6 +1,9 @@
 {
-  "categories": "Categories",
-  "tags": "Tags",
-  "filters": "Filters",
-  "search": "Search"
+  "title": "Organization",
+  "pages": [
+    "categories",
+    "tags",
+    "filters",
+    "search"
+  ]
 }

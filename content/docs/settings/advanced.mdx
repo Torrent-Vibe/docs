@@ -1,0 +1,212 @@
+---
+title: Advanced Settings
+description: Expert-level configuration and fine-tuning options
+---
+
+# Advanced Settings
+
+The Advanced settings panel provides expert-level configuration options for power users who need fine-grained control over Torrent Vibe's behavior and performance.
+
+![Advanced Settings](/screenshots/TorrentVibeScreenshot_AdvancedSettings.png)
+
+## BitTorrent Advanced
+
+### Re-check Completed Torrents
+Data integrity verification:
+
+- **Re-check completed torrents**: Verify file integrity
+  - **Enabled**: Automatically recheck completed downloads
+  - **Disabled**: Skip integrity checks
+  - **When**: On application start or manual trigger
+
+### Memory Management
+Optimize memory usage for checking:
+
+- **Outstanding memory when checking torrents**: Memory allocation
+  - **Default**: 32 MB
+  - **Range**: 1-1024 MB
+  - **Purpose**: Speed up integrity checks
+  - **Impact**: Higher values use more RAM
+
+## Network Interface
+
+### Network Interface Binding
+Control which network interface to use:
+
+- **Optional IP address**: Bind to specific IP
+  - **Empty**: Use any available interface
+  - **Specific IP**: Bind to particular network interface
+  - **Purpose**: Multi-homed systems, VPN routing
+
+### Advanced Network Options
+Fine-tune network behavior:
+
+- **Save resume data interval**: How often to save state
+  - **Default**: 40 minutes
+  - **Range**: 1-1440 minutes
+  - **Purpose**: Recovery from crashes
+  - **Trade-off**: I/O vs. data safety
+
+## Peer Management
+
+### Peer Country Information
+Display peer geographic information:
+
+- **Copy peer countries**: Receive country data
+  - **Enabled**: Show peer countries in interface
+  - **Disabled**: Hide country information
+  - **Privacy**: Minimal privacy impact
+  - **Data**: Uses GeoIP database
+
+### Tracker Communication
+Advanced tracker settings:
+
+- **Always announce to all trackers in a tier**: Tracker redundancy
+  - **Enabled**: Contact all trackers simultaneously
+  - **Disabled**: Contact trackers sequentially
+  - **Benefit**: Faster peer discovery
+  - **Cost**: Slightly more network traffic
+
+## Performance Tuning
+
+### Disk I/O Optimization
+Configure disk access patterns:
+
+- **Disk cache size**: RAM used for disk caching
+  - **Default**: Auto (based on system RAM)
+  - **Range**: 1 MB - System RAM limit
+  - **Benefit**: Reduced disk access
+  - **Impact**: Memory usage
+
+### CPU Usage Control
+Manage processing resources:
+
+- **Hash checking threads**: CPU threads for verification
+  - **Default**: Auto (based on CPU cores)
+  - **Range**: 1 - CPU core count
+  - **Benefit**: Faster integrity checks
+  - **Impact**: CPU usage during checks
+
+## Privacy & Security
+
+### IP Binding
+Control IP address usage:
+
+- **Bind to specific IP**: Force specific network interface
+  - **Use case**: VPN-only traffic
+  - **Configuration**: Enter desired IP address
+  - **Verification**: Test connectivity
+
+### Data Saving
+Control data persistence:
+
+- **Save resume data more frequently**: State saving frequency
+  - **Enabled**: Save more often (safer but slower)
+  - **Disabled**: Save less often (faster but riskier)
+  - **Balance**: Depends on system stability
+
+## Experimental Features
+
+### Beta Features
+Access experimental functionality:
+
+- **Enable experimental features**: Try new capabilities
+  - **Warning**: May be unstable
+  - **Feedback**: Report issues to developers
+  - **Updates**: Features may change
+
+### Debug Options
+Enhanced logging and diagnostics:
+
+- **Debug logging**: Detailed application logs
+  - **Enabled**: Comprehensive logging
+  - **Disabled**: Standard logging only
+  - **Location**: Logs directory
+  - **Analysis**: For troubleshooting
+
+## System Integration
+
+### File Associations
+Manage file type handling:
+
+- **Check file associations**: Verify .torrent handling
+  - **Automatic**: Ensure proper associations
+  - **Manual**: Configure custom associations
+  - **Repair**: Fix broken associations
+
+### Startup Options
+Configure application startup:
+
+- **Start minimized**: Launch in system tray
+- **Auto-start with system**: Launch on boot
+- **Restore previous session**: Reopen last torrents
+
+## Resource Management
+
+### Memory Optimization
+Fine-tune memory usage:
+
+- **Memory usage limits**: Cap application memory
+  - **Default**: No limit
+  - **Custom**: Set maximum RAM usage
+  - **Monitoring**: Track memory consumption
+
+### Network Limits
+Advanced network controls:
+
+- **Global connection limits**: Total network connections
+- **Per-torrent limits**: Connections per download
+- **Bandwidth shaping**: Advanced traffic control
+
+## Backup & Recovery
+
+### Configuration Backup
+Preserve settings:
+
+- **Auto-backup settings**: Automatic configuration backup
+- **Backup location**: Custom backup directory
+- **Restore options**: Easy configuration recovery
+
+### Data Recovery
+Handle data loss scenarios:
+
+- **Resume data recovery**: Recover from crashes
+- **Partial download handling**: Manage incomplete files
+- **Corruption recovery**: Fix damaged downloads
+
+## Troubleshooting Tools
+
+### Diagnostic Options
+Built-in diagnostic capabilities:
+
+- **Network diagnostics**: Test connectivity
+- **Performance profiling**: Identify bottlenecks
+- **Log analysis**: Review application behavior
+
+### Reset Options
+Restore default configurations:
+
+- **Reset to defaults**: Clear all customizations
+- **Selective reset**: Reset specific sections
+- **Backup before reset**: Preserve current settings
+
+## Performance Monitoring
+
+### System Metrics
+Monitor application performance:
+
+- **CPU usage tracking**: Monitor processing load
+- **Memory usage graphs**: Track RAM consumption
+- **Network statistics**: View bandwidth usage
+- **Disk I/O metrics**: Monitor storage access
+
+### Optimization Suggestions
+Automated performance recommendations:
+
+- **Smart tuning**: Automatic optimization
+- **Usage analysis**: Identify improvement areas
+- **Configuration suggestions**: Recommended changes
+
+---
+
+*Advanced settings provide deep customization but should be used carefully. Incorrect settings may impact performance or stability.*

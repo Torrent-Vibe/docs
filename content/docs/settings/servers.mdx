@@ -1,0 +1,209 @@
+---
+title: Servers Settings
+description: Configure multi-server management and path mapping
+---
+
+# Servers Settings
+
+The Servers settings panel allows you to manage multiple qBittorrent server connections and configure path mappings for different storage locations.
+
+![Server Settings](/screenshots/TorrentVibeScreenshot_ServersSettings.png)
+
+## Server Management
+
+### Primary Server Configuration
+Set up your main qBittorrent server:
+
+- **Primary Server**: Main server connection
+  - **None Selected**: No primary server configured
+  - **Add Server**: Configure new server connection
+  - **Edit Server**: Modify existing server settings
+
+### Server Actions
+Manage your server connections:
+
+- **+ Add**: Add a new qBittorrent server
+  - **Connection Details**: Host, port, credentials
+  - **Server Name**: Descriptive name for identification
+  - **Test Connection**: Verify server accessibility
+
+- **Edit**: Modify existing server configuration
+  - **Update Credentials**: Change login information
+  - **Modify Settings**: Adjust connection parameters
+  - **Server Priority**: Set server preference order
+
+## Path Mapping
+
+### Map Server Paths to Local Locations
+Configure path translations between server and local storage:
+
+- **Server Path**: Path on the qBittorrent server
+  - **Example**: `/downloads/movies/`
+  - **Purpose**: Server-side file location
+  - **Mapping**: Translate to local equivalent
+
+- **Local Path**: Corresponding local directory
+  - **Example**: `/Volumes/External/Movies/`
+  - **Purpose**: Local file access
+  - **Compatibility**: Must be accessible to Torrent Vibe
+
+### Path Mapping Management
+Control path mapping configurations:
+
+- **+ Add Mapping**: Create new path mapping
+  - **Server Path**: Source path on server
+  - **Local Path**: Target path locally
+  - **Validation**: Verify path accessibility
+
+- **Edit Mapping**: Modify existing mappings
+  - **Update Paths**: Change source or target
+  - **Test Mapping**: Verify path translation
+  - **Remove Mapping**: Delete unused mappings
+
+## Multi-Server Setup
+
+### Server Categories
+Organize servers by purpose:
+
+- **Primary Server**: Main torrent management
+- **Seedbox**: Dedicated seeding server
+- **Backup Server**: Redundant server
+- **Specialized**: Category-specific servers
+
+### Load Balancing
+Distribute torrents across servers:
+
+- **Automatic Distribution**: Balance load automatically
+- **Manual Assignment**: Assign torrents to specific servers
+- **Server Priority**: Prefer certain servers
+- **Failover**: Automatic switch on server failure
+
+## Configuration Examples
+
+### Single Local Server
+```
+Primary Server: localhost:8080
+Path Mappings: None (direct access)
+Usage: Basic local torrent management
+```
+
+### Multiple Local Servers
+```
+Server 1: localhost:8080 (Primary)
+Server 2: localhost:8081 (Secondary)
+Path Mappings: Shared storage locations
+Usage: Load balancing and redundancy
+```
+
+### Remote Seedbox Setup
+```
+Primary Server: your-seedbox.com:8080
+Local Server: localhost:8080 (Sync)
+Path Mappings: Remote to local paths
+Usage: Remote seeding with local access
+```
+
+## Path Mapping Scenarios
+
+### Network Storage
+```
+Server Path: /downloads/
+Local Path: /Volumes/NAS/Downloads/
+Purpose: Access NAS storage locally
+```
+
+### External Drives
+```
+Server Path: /media/
+Local Path: /Volumes/External/
+Purpose: USB/external drive access
+```
+
+### Cloud Storage
+```
+Server Path: /cloud/
+Local Path: /Users/username/CloudStorage/
+Purpose: Cloud-synced folder access
+```
+
+## Security Considerations
+
+### Server Access
+- **Credentials**: Secure server passwords
+- **IP Restrictions**: Limit server access
+- **VPN**: Use VPN for remote servers
+- **Firewall**: Configure appropriate rules
+
+### Path Security
+- **Permissions**: Ensure proper file permissions
+- **Access Control**: Limit path access
+- **Encryption**: Use encrypted storage
+- **Backup**: Regular path backups
+
+## Performance Optimization
+
+### Connection Optimization
+- **Connection Pooling**: Reuse connections
+- **Timeout Settings**: Appropriate timeouts
+- **Retry Logic**: Automatic retry on failure
+- **Load Balancing**: Distribute requests
+
+### Path Mapping Performance
+- **Local Paths**: Prefer local storage
+- **Network Paths**: Optimize network access
+- **Caching**: Cache path translations
+- **Batch Operations**: Group file operations
+
+## Troubleshooting
+
+### Server Connection Issues
+
+**Can't connect to server:**
+- Verify server is running
+- Check network connectivity
+- Test credentials
+- Check firewall settings
+
+**Server not responding:**
+- Check server load
+- Verify server configuration
+- Test with direct browser access
+- Check server logs
+
+### Path Mapping Problems
+
+**Paths not accessible:**
+- Verify path exists
+- Check permissions
+- Test network access
+- Update path mappings
+
+**Mapping not working:**
+- Check path syntax
+- Verify server configuration
+- Test path translation
+- Check for conflicts
+
+## Monitoring & Maintenance
+
+### Server Health
+- Monitor connection status
+- Track server performance
+- View server statistics
+- Alert on server issues
+
+### Path Mapping Status
+- Verify mapping validity
+- Monitor path accessibility
+- Track mapping usage
+- Update stale mappings
+
+### Regular Maintenance
+- Test server connections
+- Update path mappings
+- Clean up unused servers
+- Review security settings
+
+---
+
+*Multi-server support enables flexible torrent management across different locations and storage systems.*

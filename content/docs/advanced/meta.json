@@ -1,6 +1,12 @@
 {
-  "multi-server": "Multi-Server Setup",
-  "automation": "Automation",
-  "integrations": "Integrations",
-  "customization": "Customization"
+  "title": "Advanced Features",
+  "pages": [
+    "multi-server",
+    "automation",
+    "integrations",
+    "customization",
+    "source-code",
+    "api-integration",
+    "performance-tuning"
+  ]
 }

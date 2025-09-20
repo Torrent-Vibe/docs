@@ -1,4 +1,5 @@
 {
+  "title": "User Guide",
   "interface-overview": "Interface Overview",
   "torrent-management": "Torrent Management",
   "organization": "Organization",
@@ -6,9 +7,12 @@
   "preferences": "Preferences",
   "pages": [
     "interface-overview",
-    "torrent-management", 
+    "torrent-management",
+    "adding-torrents",
+    "monitoring-downloads",
     "organization",
-    "monitoring",
-    "preferences"
+    "server-management",
+    "api-integration",
+    "troubleshooting"
   ]
 }

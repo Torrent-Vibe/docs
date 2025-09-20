@@ -1,0 +1,285 @@
+---
+title: Performance Tuning
+description: Optimize Torrent Vibe for maximum performance
+---
+
+# Performance Tuning
+
+This guide helps you optimize Torrent Vibe for the best possible performance based on your system configuration and usage patterns.
+
+## System Requirements
+
+### Minimum Requirements
+- **OS**: macOS 10.15 or later
+- **CPU**: Dual-core 2.0 GHz
+- **RAM**: 4 GB
+- **Storage**: 500 MB free space
+- **Network**: 10 Mbps broadband
+
+### Recommended Specifications
+- **OS**: macOS 12.0 or later
+- **CPU**: Quad-core 3.0 GHz or better
+- **RAM**: 8 GB or more
+- **Storage**: SSD with 1 GB free space
+- **Network**: 50 Mbps or faster
+
+## Initial Setup Optimization
+
+### Memory Configuration
+
+**For Low-End Systems**
+```
+Max Memory: 512 MB
+Cache Size: 32 MB
+Connections: 100 total, 50 per torrent
+```
+
+**For High-End Systems**
+```
+Max Memory: 2048 MB
+Cache Size: 256 MB
+Connections: 500 total, 100 per torrent
+```
+
+### CPU Optimization
+
+**Processing Threads**
+- **Hash Checking**: 2-4 threads (based on CPU cores)
+- **Network I/O**: Asynchronous processing
+- **UI Updates**: Separate thread for responsiveness
+
+## Network Optimization
+
+### Connection Limits
+
+**Dial-up/DSL (Slow)**
+```
+Global Connections: 50
+Per Torrent: 10
+Upload Slots: 2
+```
+
+**Cable/Fiber (Fast)**
+```
+Global Connections: 200-500
+Per Torrent: 50-100
+Upload Slots: 5-10
+```
+
+### Protocol Settings
+
+**Enable Performance Features**
+- DHT: Enabled for peer discovery
+- PEX: Enabled for peer exchange
+- LSD: Enabled for local discovery
+- uTP: Enabled for congestion control
+
+### Speed Optimization
+
+**Upload Speed Management**
+- Set upload limit to 80-90% of maximum
+- Reserve bandwidth for other applications
+- Use alternate speed limits for off-peak hours
+
+**Download Speed Management**
+- Set download limit to 95-100% of maximum
+- Monitor and adjust based on actual speeds
+- Consider ISP throttling
+
+## Disk I/O Optimization
+
+### Storage Configuration
+
+**HDD Optimization**
+- Pre-allocate files to prevent fragmentation
+- Use larger cache sizes
+- Disable frequent disk writes
+- Schedule defragmentation
+
+**SSD Optimization**
+- Smaller cache sizes (SSDs are fast)
+- Enable TRIM support
+- Monitor write endurance
+- Use SSD-specific settings
+
+### File Management
+
+**Download Organization**
+- Use subfolders for large libraries
+- Enable automatic categorization
+- Set appropriate save paths
+- Monitor disk space usage
+
+## Advanced Tuning
+
+### BitTorrent Protocol Tuning
+
+**Peer Management**
+- Optimize peer selection algorithms
+- Configure peer choking/unchoking
+- Set appropriate timeouts
+- Monitor peer quality
+
+**Tracker Communication**
+- Configure announce intervals
+- Add backup trackers
+- Monitor tracker health
+- Use trackerless torrents when possible
+
+### Memory Management
+
+**Cache Optimization**
+- Adjust disk cache size based on RAM
+- Configure memory limits
+- Monitor memory usage
+- Clear caches periodically
+
+**Garbage Collection**
+- Configure GC settings for .NET
+- Monitor memory pressure
+- Optimize object allocation
+- Reduce memory fragmentation
+
+## Monitoring Performance
+
+### Built-in Monitoring
+
+**Performance Metrics**
+- CPU usage tracking
+- Memory consumption graphs
+- Network bandwidth monitoring
+- Disk I/O statistics
+
+**System Integration**
+- macOS Activity Monitor integration
+- Performance logging
+- Alert system for issues
+- Historical performance data
+
+### External Monitoring
+
+**System Tools**
+- Use Activity Monitor for detailed stats
+- Monitor network with Network Utility
+- Check disk usage with Disk Utility
+- Use Console for system logs
+
+## Troubleshooting Performance Issues
+
+### Slow Downloads
+
+**Network Issues**
+- Test internet connection speed
+- Check for bandwidth throttling
+- Monitor peer connections
+- Verify port forwarding
+
+**System Bottlenecks**
+- Check CPU usage
+- Monitor memory usage
+- Verify disk I/O performance
+- Close competing applications
+
+### High Resource Usage
+
+**CPU Optimization**
+- Reduce connection limits
+- Disable unnecessary features
+- Update to latest version
+- Check for background processes
+
+**Memory Optimization**
+- Close other memory-intensive applications
+- Clear system caches
+- Restart application
+- Check for memory leaks
+
+### Disk Performance
+
+**I/O Bottlenecks**
+- Check disk space
+- Defragment if using HDD
+- Monitor disk health
+- Consider SSD upgrade
+
+## Platform-Specific Optimization
+
+### macOS Optimization
+
+**System Integration**
+- Enable Metal graphics acceleration
+- Configure energy settings
+- Optimize for macOS version
+- Use native notifications
+
+**Performance Settings**
+- Adjust for Apple Silicon vs Intel
+- Configure thermal management
+- Optimize for battery life
+- Use optimized builds
+
+## Automation and Scheduling
+
+### Automated Optimization
+
+**Scheduled Tasks**
+- Regular cache clearing
+- Automated defragmentation
+- Scheduled speed limit changes
+- Automatic maintenance
+
+**Smart Features**
+- Adaptive performance based on system load
+- Automatic quality of service
+- Bandwidth borrowing
+- Intelligent caching
+
+## Benchmarking
+
+### Performance Testing
+
+**Speed Tests**
+- Regular internet speed testing
+- Torrent download speed benchmarks
+- System performance benchmarks
+- Comparative analysis
+
+**Monitoring Setup**
+- Establish performance baselines
+- Set up regular monitoring
+- Create performance reports
+- Track improvements over time
+
+## Maintenance
+
+### Regular Maintenance
+
+**System Cleanup**
+- Clear temporary files
+- Remove completed torrents
+- Clean up old logs
+- Defragment storage
+
+**Application Updates**
+- Keep Torrent Vibe updated
+- Update system software
+- Monitor for performance improvements
+- Apply security patches
+
+### Long-term Optimization
+
+**Hardware Upgrades**
+- Consider RAM upgrades
+- SSD storage migration
+- Network infrastructure improvements
+- CPU upgrades for heavy usage
+
+**Configuration Evolution**
+- Adjust settings as needs change
+- Monitor performance trends
+- Optimize for specific workloads
+- Fine-tune based on usage patterns
+
+---
+
+*Performance tuning is an ongoing process. Monitor your system's performance and adjust settings as your needs evolve.*

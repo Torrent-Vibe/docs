@@ -1,63 +1,105 @@
 ---
 title: Welcome to Torrent Vibe
-description: A modern, powerful torrent management interface for qBittorrent
+description: A modern BitTorrent client with advanced features and beautiful interface
 ---
 
 # Welcome to Torrent Vibe
 
-Torrent Vibe is a modern, feature-rich web interface for qBittorrent that provides an intuitive and powerful way to manage your torrent downloads. Built with the latest web technologies, it offers real-time monitoring, multi-server support, and extensive customization options.
+Torrent Vibe is a powerful, modern BitTorrent client built on the MonoTorrent library and .NET platform. It provides an intuitive interface for downloading, managing, and seeding torrent files with advanced features like multi-server support, API integrations, and extensive customization options.
+
+![Main Interface](/screenshots/TorrentVibeScreenshot_MainInterface.jpeg)
 
 ## 🚀 Key Features
 
-- **Real-time Monitoring**: Live updates of download progress, speeds, and statistics
-- **Multi-Server Support**: Connect to multiple qBittorrent instances simultaneously
-- **Advanced Organization**: Categories, tags, filters, and powerful search capabilities
-- **Modern UI**: Clean, responsive interface that works on desktop and mobile
-- **Automation**: RSS feeds, auto-download rules, and scheduling
-- **API Integration**: REST and WebSocket APIs for third-party integrations
-- **Cross-Platform**: Works on Windows, macOS, Linux, and in web browsers
+- **Modern Interface**: Clean, dark-themed UI with customizable appearance
+- **Multi-Server Support**: Connect to multiple qBittorrent instances
+- **Advanced Torrent Management**: Categories, priorities, and detailed controls
+- **Real-time Monitoring**: Live download/upload speeds and progress tracking
+- **API Integrations**: OMDb, OpenAI, and private tracker support
+- **Web UI Access**: Remote management through web interface
+- **Cross-Platform**: Native macOS application with web capabilities
 
 ## 📖 Getting Started
 
-New to Torrent Vibe? Start with our [Installation Guide](quick-start/installation) to get up and running quickly.
+### First Launch
+When you first open Torrent Vibe, you'll see the main interface ready for torrent management.
+
+![Empty Interface](/screenshots/TorrentVibeScreenshot_MainEmptyInterface.jpeg)
+
+### Connecting to qBittorrent
+To connect to your qBittorrent server:
+
+1. Click the connection settings or use the setup wizard
+2. Enter your server details (host, port, username, password)
+3. Enable HTTPS for secure connections if needed
+
+![Connection Dialog](/screenshots/TorrentVibeScreenshot_qBittorrent_Connection_Dialog.jpeg)
 
 ## 📚 Documentation Sections
 
 - **[Quick Start](quick-start/)**  
-  Learn how to install and configure Torrent Vibe for the first time.
+  Installation and initial setup guide
 
 - **[User Guide](user-guide/)**  
-  Comprehensive guide to using all features of Torrent Vibe.
+  Complete guide to using Torrent Vibe features
+
+- **[Settings & Configuration](settings/)**  
+  Detailed configuration of all settings panels
 
 - **[Advanced Features](advanced/)**  
-  Explore automation, customization, and integration capabilities.
-
-- **[Platform Support](platforms/)**  
-  Information about supported platforms and deployment options.
+  API integrations, automation, and customization
 
 - **[Troubleshooting](troubleshooting/)**  
-  Solutions to common issues and debugging information.
+  Common issues and solutions
 
-- **[Developer Documentation](developer/)**  
-  API references and guides for developers.
+## 💡 Core Functionality
 
-- **[Purchase & Licensing](purchase/)**  
-  Information about licensing and purchasing options.
+### Torrent Management
+- Add torrents via file, magnet link, or drag-and-drop
+- Monitor download progress with detailed statistics
+- Manage categories, priorities, and file selection
+- Control seeding and upload limits
 
-## 💡 Why Choose Torrent Vibe?
+![Add Torrent Dialog](/screenshots/TorrentVibeScreenshot_AddTorrentDialog.png)
 
-- **Professional Interface**: Designed for power users who need control
-- **Performance Focused**: Optimized for handling large numbers of torrents
-- **Extensible**: Plugin system and API for custom integrations
-- **Privacy Conscious**: No data collection, everything runs locally
-- **Open Standards**: Built on qBittorrent's proven technology
+### Download Monitoring
+- Real-time speed monitoring (download/upload)
+- Progress tracking with visual indicators
+- Peer and tracker information
+- Disk space management
 
-## 🆘 Need Help?
+![Download Progress](/screenshots/TorrentVibeScreenshot_DownloadingProgress.jpeg)
 
-- Check our [FAQ](troubleshooting/faq) for common questions
-- Visit the [Troubleshooting](troubleshooting/) section for detailed solutions
-- Contact [Support](troubleshooting/support) for additional assistance
+### Server Integration
+- Connect to multiple qBittorrent servers
+- Path mapping for different storage locations
+- Server-specific settings and preferences
+
+![Server Settings](/screenshots/TorrentVibeScreenshot_ServersSettings.png)
+
+## 🔧 Advanced Features
+
+### API Integrations
+- **OMDb Integration**: Movie/TV metadata discovery
+- **OpenAI Integration**: AI-powered torrent intelligence
+- **Private Trackers**: M-Team and other private tracker support
+
+![API Settings](/screenshots/TorrentVibeScreenshot_APITokensSettings.png)
+
+### Customization
+- Appearance themes and UI personalization
+- Speed limits and scheduling
+- Advanced BitTorrent protocol settings
+- Web UI configuration for remote access
+
+![Appearance Settings](/screenshots/TorrentVibeScreenshot_AppearanceSettings.jpeg)
+
+## 🆘 Support & Resources
+
+- [FAQ](troubleshooting/faq) - Common questions and answers
+- [Troubleshooting Guide](troubleshooting/) - Solutions to technical issues
+- [Source Code Access](advanced/source-code) - Developer resources
 
 ---
 
-*Torrent Vibe is not affiliated with qBittorrent. It is a third-party interface that enhances the qBittorrent experience.*
+*Torrent Vibe is built on the MonoTorrent library and designed for modern torrent management needs.*
