@@ -43,8 +43,8 @@ To access the source code, you need a valid lifetime license key.
 ### Repository Access
 
 **Full Source Code**
-- Complete C# source code
-- .NET project files
+- Complete TypeScript source code
+- Electron and Vite project files
 - Build configurations
 - Dependencies and libraries
 
@@ -57,10 +57,10 @@ To access the source code, you need a valid lifetime license key.
 ### Development Environment
 
 **Required Tools**
-- Visual Studio 2022 or later
-- .NET 6.0 or higher
+- Visual Studio Code
+- Node.js 18+ and pnpm
 - Git for version control
-- Windows/macOS development environment
+- macOS/Windows/Linux development environment
 
 **Recommended Setup**
 - SSD storage for faster builds
@@ -80,27 +80,27 @@ cd torrent-vibe
 ### Restore Dependencies
 
 ```bash
-dotnet restore
+pnpm install
 ```
 
 ### Build Application
 
 ```bash
-dotnet build --configuration Release
+pnpm build
 ```
 
 ### Run Application
 
 ```bash
-dotnet run --project src/TorrentVibe/TorrentVibe.csproj
+pnpm dev
 ```
 
 ## Development Guidelines
 
 ### Code Standards
 
-**C# Coding Standards**
-- Follow Microsoft C# coding guidelines
+**TypeScript Coding Standards**
+- Follow TypeScript best practices
 - Use consistent naming conventions
 - Implement proper error handling
 - Write comprehensive unit tests
