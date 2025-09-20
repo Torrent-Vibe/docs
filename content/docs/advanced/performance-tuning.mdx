@@ -55,31 +55,31 @@ Connections: 500 total, 100 per torrent
 **Dial-up/DSL (Slow)**
 ```
 Global Connections: 50
-Per Torrent: 10
+Connections per Task: 10
 Upload Slots: 2
 ```
 
 **Cable/Fiber (Fast)**
 ```
 Global Connections: 200-500
-Per Torrent: 50-100
+Connections per Task: 50-100
 Upload Slots: 5-10
 ```
 
 ### Protocol Settings
 
 **Enable Performance Features**
-- DHT: Enabled for peer discovery
-- PEX: Enabled for peer exchange
-- LSD: Enabled for local discovery
-- uTP: Enabled for congestion control
+- DHT: For peer discovery
+- PEX: For peer exchange
+- LSD: For local peer discovery
+- uTP: For congestion control
 
 ### Speed Optimization
 
 **Upload Speed Management**
 - Set upload limit to 80-90% of maximum
 - Reserve bandwidth for other applications
-- Use alternate speed limits for off-peak hours
+- Use alternative speed limits during off-peak hours
 
 **Download Speed Management**
 - Set download limit to 95-100% of maximum
@@ -97,7 +97,7 @@ Upload Slots: 5-10
 - Schedule defragmentation
 
 **SSD Optimization**
-- Smaller cache sizes (SSDs are fast)
+- Smaller cache sizes (SSD is faster)
 - Enable TRIM support
 - Monitor write endurance
 - Use SSD-specific settings
@@ -105,7 +105,7 @@ Upload Slots: 5-10
 ### File Management
 
 **Download Organization**
-- Use subfolders for large libraries
+- Use sub-folders for large libraries
 - Enable automatic categorization
 - Set appropriate save paths
 - Monitor disk space usage
@@ -115,8 +115,8 @@ Upload Slots: 5-10
 ### BitTorrent Protocol Tuning
 
 **Peer Management**
-- Optimize peer selection algorithms
-- Configure peer choking/unchoking
+- Optimize peer selection algorithm
+- Configure choking/unchoking of peers
 - Set appropriate timeouts
 - Monitor peer quality
 
@@ -129,18 +129,18 @@ Upload Slots: 5-10
 ### Memory Management
 
 **Cache Optimization**
-- Adjust disk cache size based on RAM
-- Configure memory limits
-- Monitor memory usage
-- Clear caches periodically
+- Adjust qBittorrent's disk cache size based on server RAM
+- Configure memory limits in qBittorrent preferences
+- Monitor memory usage via qBittorrent WebUI
+- Regularly clear cache through qBittorrent settings
 
-**Garbage Collection**
-- Configure GC settings for .NET
-- Monitor memory pressure
-- Optimize object allocation
-- Reduce memory fragmentation
+**Application Memory**
+- qb-webui is a lightweight Electron app
+- Memory usage depends on the number of torrents displayed
+- Close unused tabs to reduce memory footprint
+- Restart the application if memory usage is too high
 
-## Monitoring Performance
+## Performance Monitoring
 
 ### Built-in Monitoring
 
@@ -153,24 +153,24 @@ Upload Slots: 5-10
 **System Integration**
 - macOS Activity Monitor integration
 - Performance logging
-- Alert system for issues
+- Issue alerting system
 - Historical performance data
 
 ### External Monitoring
 
 **System Tools**
 - Use Activity Monitor for detailed stats
-- Monitor network with Network Utility
-- Check disk usage with Disk Utility
-- Use Console for system logs
+- Use Network Utility for network monitoring
+- Use Disk Utility to check disk usage
+- Use Console to view system logs
 
-## Troubleshooting Performance Issues
+## Performance Issue Troubleshooting
 
 ### Slow Downloads
 
 **Network Issues**
 - Test internet connection speed
-- Check for bandwidth throttling
+- Check for bandwidth limitations
 - Monitor peer connections
 - Verify port forwarding
 
@@ -183,15 +183,15 @@ Upload Slots: 5-10
 ### High Resource Usage
 
 **CPU Optimization**
-- Reduce connection limits
+- Lower connection limits
 - Disable unnecessary features
-- Update to latest version
+- Update to the latest version
 - Check for background processes
 
 **Memory Optimization**
 - Close other memory-intensive applications
-- Clear system caches
-- Restart application
+- Clear system cache
+- Restart the application
 - Check for memory leaks
 
 ### Disk Performance
@@ -200,48 +200,46 @@ Upload Slots: 5-10
 - Check disk space
 - Defragment if using HDD
 - Monitor disk health
-- Consider SSD upgrade
+- Consider upgrading to SSD
 
 ## Platform-Specific Optimization
 
-### macOS Optimization
+**Electron Application Notes**
+- qb-webui runs as an Electron app on all platforms
+- Performance is mainly dependent on qBittorrent server configuration
+- Network settings are managed through qBittorrent preferences
+- File system performance depends on qBittorrent download location
 
-**System Integration**
-- Enable Metal graphics acceleration
-- Configure energy settings
-- Optimize for macOS version
-- Use native notifications
-
-**Performance Settings**
-- Adjust for Apple Silicon vs Intel
-- Configure thermal management
-- Optimize for battery life
-- Use optimized builds
+**Cross-Platform Optimization**
+- Use SSD storage for qBittorrent download directories if possible
+- Ensure stable network connection to qBittorrent server
+- Configure qBittorrent based on network conditions
+- Monitor resource usage of qb-webui and qBittorrent
 
 ## Automation and Scheduling
 
 ### Automated Optimization
 
 **Scheduled Tasks**
-- Regular cache clearing
-- Automated defragmentation
-- Scheduled speed limit changes
-- Automatic maintenance
+- Regularly clear cache
+- Automatic defragmentation
+- Schedule speed limit changes
+- Automated maintenance
 
-**Smart Features**
+**Intelligent Features**
 - Adaptive performance based on system load
 - Automatic quality of service
 - Bandwidth borrowing
-- Intelligent caching
+- Smart caching
 
 ## Benchmarking
 
 ### Performance Testing
 
 **Speed Tests**
-- Regular internet speed testing
-- Torrent download speed benchmarks
-- System performance benchmarks
+- Regular internet speed tests
+- Seed download speed benchmarking
+- System performance benchmarking
 - Comparative analysis
 
 **Monitoring Setup**
@@ -258,21 +256,21 @@ Upload Slots: 5-10
 - Clear temporary files
 - Remove completed torrents
 - Clean up old logs
-- Defragment storage
+- Disk defragmentation
 
 **Application Updates**
 - Keep Torrent Vibe updated
 - Update system software
-- Monitor for performance improvements
+- Monitor performance improvements
 - Apply security patches
 
 ### Long-term Optimization
 
 **Hardware Upgrades**
-- Consider RAM upgrades
+- Consider upgrading RAM
 - SSD storage migration
 - Network infrastructure improvements
-- CPU upgrades for heavy usage
+- CPU upgrade for heavy users
 
 **Configuration Evolution**
 - Adjust settings as needs change
@@ -282,4 +280,4 @@ Upload Slots: 5-10
 
 ---
 
-*Performance tuning is an ongoing process. Monitor your system's performance and adjust settings as your needs evolve.*
+*Performance tuning is an ongoing process. Monitor your system's performance and adjust settings as needed.*

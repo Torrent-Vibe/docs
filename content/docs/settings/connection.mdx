@@ -54,29 +54,33 @@ Set up the port for incoming connections:
 ### Connection Limits
 Control network resource usage:
 
-- **Global Maximum Connections**: Total peer connections
+- **Global maximum connections**: Total number of peer connections
   - Default: 500
-  - Higher values for fast connections
-  - Lower values for limited bandwidth
+  - Increase for faster networks
+  - Decrease if bandwidth is limited
 
-- **Maximum Connections per Torrent**: Per-torrent limit
+- **Max connections per torrent**: Limit connections for each torrent
   - Default: 100
-  - Balances between torrents
-  - Prevents single torrent from dominating
+  - Balance bandwidth across multiple torrents
+  - Prevent a single torrent from using too many resources
 
 ### Bandwidth Management
 Fine-tune network usage:
 
-- **Alternative Speed Limits**: Time-based restrictions
-  - Configure off-peak speed limits
-  - Useful for data caps or business hours
+- **Speed limit**: Set maximum upload/download speeds
+  - Prevents network saturation
+  - Ensures bandwidth for other activities
+
+- **Enable bandwidth scheduler**: Schedule speed limits
+  - Configure different speeds for different times
+  - Useful for managing bandwidth during peak usage
 
 ## Advanced Network Settings
 
 ### Proxy Configuration
-Route connections through proxy servers:
+Connect through a proxy server:
 
-- **Proxy Type**: None, HTTP, SOCKS4, SOCKS5
+- **Proxy type**: None, HTTP, SOCKS4, SOCKS5
 - **Host**: Proxy server address
 - **Port**: Proxy server port
 - **Authentication**: Username/password if required
@@ -84,29 +88,29 @@ Route connections through proxy servers:
 ### IP Filtering
 Control which IPs can connect:
 
-- **IP Filter**: Allow/block specific IP ranges
-- **Filter File**: Import filter lists
-- **Auto-update**: Keep filters current
+- **IP filtering**: Allow/block specific IP ranges
+- **Filter list**: Import/export filter lists
+- **Auto-update**: Keep filters up to date automatically
 
 ## Security Considerations
 
 ### Encryption Best Practices
-- **Home Network**: Use "Prefer encryption" for balance
-- **Public WiFi**: Enable "Require encryption" for security
-- **Corporate**: Force encryption with VPN
+- **Home networks**: Use "Enabled" for balanced security
+- **Public WiFi**: Use "Forced" to ensure maximum security
+- **Corporate networks**: Use a VPN with forced encryption
 
 ### Port Forwarding
-- **Router Setup**: Enable UPnP for automatic configuration
-- **Manual Forwarding**: Forward configured port to your computer
-- **Firewall**: Allow Torrent Vibe through firewall
+- **Router settings**: Enable UPnP for automatic configuration
+- **Manual forwarding**: Forward the configured port to your computer
+- **Firewall**: Allow Torrent Vibe through the firewall
 
 ## Performance Tuning
 
-### Fast Connections (100+ Mbps)
+### Fast Connection (100+ Mbps)
 ```
 Port: 6881
-Global Connections: 1000
-Per Torrent: 200
+Global connections: 1000
+Connections per torrent: 200
 Encryption: Disabled
 UPnP: Enabled
 ```
@@ -114,8 +118,8 @@ UPnP: Enabled
 ### Limited Bandwidth
 ```
 Port: Random
-Global Connections: 200
-Per Torrent: 50
+Global connections: 200
+Connections per torrent: 50
 Encryption: Enabled
 UPnP: Enabled
 ```
@@ -123,8 +127,8 @@ UPnP: Enabled
 ### High Security
 ```
 Port: Custom (5xxxx)
-Global Connections: 500
-Per Torrent: 100
+Global connections: 500
+Connections per torrent: 100
 Encryption: Forced
 Anonymous Mode: Enabled
 ```
@@ -133,7 +137,7 @@ Anonymous Mode: Enabled
 
 ### Connection Issues
 
-**Can't connect to peers:**
+**Cannot connect to peers:**
 - Check firewall settings
 - Verify port forwarding
 - Test port accessibility
@@ -143,20 +147,20 @@ Anonymous Mode: Enabled
 - Check encryption settings
 - Monitor peer quality
 
-**Port forwarding problems:**
+**Port forwarding issues:**
 - Disable/enable UPnP
 - Check router configuration
-- Use port checker tools
+- Use port checking tools
 
 ### Network Diagnostics
 
 **Test basic connectivity:**
 - Ping known hosts
 - Check DNS resolution
-- Verify internet connection
+- Verify internet connectivity
 
 **Monitor connections:**
-- View peer lists
+- View peer list
 - Check connection statistics
 - Monitor bandwidth usage
 
@@ -165,17 +169,17 @@ Anonymous Mode: Enabled
 - Check system firewall
 - Test with different ports
 
-## Monitoring & Maintenance
+## Monitoring and Maintenance
 
 ### Connection Statistics
 - View active connections
 - Monitor connection success rates
-- Track peer countries (if enabled)
+- Track peer countries/regions (if enabled)
 
 ### Regular Maintenance
-- Clear connection cache periodically
-- Update IP filters regularly
-- Monitor for blocked ports
+- Regularly clear connection cache
+- Periodically update IP filters
+- Monitor blocked ports
 
 ---
 

@@ -7,6 +7,8 @@ description: API references and guides for developers
 
 Welcome to the Torrent Vibe developer documentation. This section provides comprehensive information for developers who want to integrate with, extend, or contribute to Torrent Vibe.
 
+> **Tip**: If you're not a developer and just want to use Torrent Vibe, please refer to the [User Guide](../user-guide/) section.
+
 ## 🚀 Getting Started
 
 ### Development Setup
@@ -15,7 +17,7 @@ If you're interested in contributing to Torrent Vibe or building integrations:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/torrent-vibe/torrent-vibe.git
+   git clone https://github.com/Torrent-Vibe/Torrent-Vibe.git
    cd torrent-vibe
    ```
 
@@ -26,7 +28,9 @@ If you're interested in contributing to Torrent Vibe or building integrations:
 
 3. **Start development server**
    ```bash
-   pnpm dev
+   pnpm dev:electron  # For Electron development
+   # or
+   pnpm dev          # For web development
    ```
 
 See [Development Setup](contributing/development-setup) for detailed instructions.
@@ -46,7 +50,7 @@ Customize the appearance of Torrent Vibe:
 
 ### Plugin Development
 
-Extend Torrent Vibe with plugins:
+Extend the functionality of Torrent Vibe with plugins:
 
 - **Plugin Architecture**: Modular plugin system
 - **API Access**: Full access to internal APIs
@@ -59,48 +63,67 @@ Extend Torrent Vibe with plugins:
 
 Build extensions for Torrent Vibe:
 
-- **Extension Points**: Predefined extension points
-- **Lifecycle Hooks**: Application lifecycle integration
+- **Extension Points**: Pre-defined extension points
+- **Lifecycle Hooks**: Integrate with application lifecycle
 - **Configuration**: Extension configuration system
-- **Distribution**: Package and distribute extensions
+- **Distribution**: Packaging and distributing extensions
 
 [View Extension API](customization/extension-api)
 
+### qb-webui Architecture
+
+qb-webui is built with modern web technologies:
+
+- **Frontend**: React + TypeScript + Vite
+- **Backend**: Electron main process
+- **Styling**: Tailwind CSS
+- **State Management**: Zustand
+- **API Client**: qBittorrent Web API integration
+
+### Development Tools
+
+Available development tools:
+
+- **Build System**: Vite with custom plugins
+- **Code Linting**: ESLint with custom rules
+- **Code Formatting**: Prettier
+- **Type Checking**: TypeScript
+- **Internationalization**: React i18next
+
 ## 🤝 Contributing
 
-### Development Workflow
+### Contribution Workflow
 
-Contributing to Torrent Vibe:
+Contribute to Torrent Vibe:
 
 1. **Fork the repository**
 2. **Create a feature branch**
-3. **Make your changes**
+3. **Make changes**
 4. **Write tests**
 5. **Submit a pull request**
 
-[View Contributing Guide](contributing/)
+[View Contribution Guidelines](contributing/)
 
-### Coding Standards
+### Code Standards
 
-Code quality and consistency:
+Ensure code quality and consistency:
 
 - **JavaScript/TypeScript**: Modern ES6+ syntax
 - **Code Style**: Consistent formatting with Prettier
 - **Linting**: ESLint configuration
 - **Testing**: Jest testing framework
 
-[View Coding Standards](contributing/coding-standards)
+[View Code Standards](contributing/coding-standards)
 
-### Testing Guide
+### Testing Guidelines
 
-Comprehensive testing:
+Current testing methods:
 
-- **Unit Tests**: Component and utility testing
-- **Integration Tests**: API and feature testing
-- **E2E Tests**: End-to-end user journey testing
-- **Performance Testing**: Load and performance testing
+- **Manual QA**: Use `pnpm typecheck:turbo` and `pnpm lint` for checks
+- **Integration Testing**: Manually verify in Electron and browser environments
+- **Code Quality**: ESLint rules for i18n JSON validation
 
-[View Testing Guide](contributing/testing)
+*Note: Formal unit test suite is not yet configured.*
 
 ## 📋 Changelog
 
@@ -124,7 +147,7 @@ Stay updated with the latest changes:
 
 ### Resources
 
-- **Code Examples**: Sample code and integrations
+- **Code Samples**: Sample code and integrations
 - **SDKs**: Official SDKs for popular languages
 - **Tools**: Development tools and utilities
 - **Community**: Developer community resources
@@ -134,7 +157,7 @@ Stay updated with the latest changes:
 - **Architecture Overview**: System architecture documentation
 - **Performance Guide**: Performance optimization tips
 - **Security Guide**: Security best practices
-- **Deployment Guide**: Deployment and scaling guides
+- **Deployment Guide**: Deployment and scaling guidance
 
 ---
 

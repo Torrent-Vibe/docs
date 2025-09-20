@@ -1,9 +1,4 @@
 {
   "title": "Organization",
-  "pages": [
-    "categories",
-    "tags",
-    "filters",
-    "search"
-  ]
+  "pages": ["categories", "tags", "filters", "search"]
 }
