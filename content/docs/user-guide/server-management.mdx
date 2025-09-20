@@ -3,24 +3,13 @@ title: Server Management
 description: Managing multiple qBittorrent servers and connections
 ---
 
-# Server Management
-
 Torrent Vibe supports connecting to multiple qBittorrent servers, enabling flexible torrent management across different locations and setups.
 
 ## Server Configuration
 
 ### Adding a Server
 
-1. Go to Settings → Servers
-2. Click "+ Add" button
-3. Enter server details:
-   - **Server Name**: Descriptive identifier
-   - **Host**: IP address or hostname
-   - **Port**: Web UI port (default: 8080)
-   - **Username**: qBittorrent username
-   - **Password**: qBittorrent password
-
-![Server Settings](/screenshots/TorrentVibeScreenshot_ServersSettings.png)
+For detailed server configuration steps, see [Servers Settings](../settings/servers.mdx).
 
 ### Server Types
 
@@ -43,210 +32,47 @@ Torrent Vibe supports connecting to multiple qBittorrent servers, enabling flexi
 
 ### Understanding Path Mapping
 
-Path mapping translates file paths between your qBittorrent server and local system:
-
-- **Server Path**: Location on qBittorrent server
-- **Local Path**: Corresponding location on your machine
-- **Purpose**: Access server files locally
-
-### Setting Up Path Mapping
-
-1. In Servers settings, find "Path Mapping" section
-2. Click "+ Add mapping"
-3. Configure:
-   - **Server Path**: `/downloads/` (server location)
-   - **Local Path**: `/Users/username/Downloads/` (local location)
-
-### Common Mapping Scenarios
-
-**Network Attached Storage (NAS)**
-```
-Server Path: /downloads/
-Local Path: /Volumes/NAS/Downloads/
-Purpose: Access NAS files locally
-```
-
-**External Drive**
-```
-Server Path: /media/
-Local Path: /Volumes/External/
-Purpose: USB drive access
-```
-
-**Cloud Storage**
-```
-Server Path: /cloud/
-Local Path: /Users/username/Cloud/
-Purpose: Cloud-synced files
-```
+Path mapping translates file paths between your qBittorrent server and local system. For detailed configuration, see [Servers Settings → Path Mapping](../settings/servers.mdx#path-mapping).
 
 ## Multi-Server Management
 
-### Server Organization
+### Server Switching
 
 **Primary Server**
-- Main torrent management server
-- Default for new torrents
-- Highest priority connection
+- Main server for torrent operations
+- Default server for new torrents
+- Configurable in server settings
 
-**Secondary Servers**
-- Backup servers
-- Specialized servers (e.g., seedbox)
-- Load balancing
-
-### Load Balancing
-
-**Automatic Distribution**
-- Balance torrents across servers
-- Based on server capacity
-- Automatic failover
-
-**Manual Assignment**
-- Assign specific torrents to servers
-- Based on content type or priority
-- Custom routing rules
-
-## Server Monitoring
-
-### Connection Status
-
-**Health Indicators**
-- Connection status (connected/disconnected)
-- Response time
-- Server load
-- Error notifications
-
-**Performance Metrics**
-- Active torrents per server
-- Bandwidth usage
-- Disk space available
-- CPU/memory usage
-
-### Server Statistics
-
-**Usage Tracking**
-- Total torrents managed
-- Data transferred
-- Uptime statistics
-- Error rates
-
-## Advanced Features
-
-### Server Groups
-
-**Categorization**
-- Group servers by purpose
-- Apply settings to groups
-- Bulk operations on groups
-
-**Priority Settings**
-- Server preference order
-- Automatic switching
-- Load balancing weights
-
-### Synchronization
-
-**Torrent Sync**
-- Sync torrents between servers
-- Automatic replication
-- Conflict resolution
-
-**Settings Sync**
-- Synchronize server configurations
-- Backup and restore
-- Version control
-
-## Security Considerations
-
-### Connection Security
-
-**Authentication**
-- Strong passwords
-- Two-factor authentication (if supported)
-- Regular credential rotation
-
-**Network Security**
-- VPN for remote access
-- Firewall configuration
-- IP restrictions
-
-### Data Protection
-
-**Encryption**
-- HTTPS for remote connections
-- Encrypted data transfer
-- Secure credential storage
-
-**Access Control**
-- User permission levels
-- Server access restrictions
-- Audit logging
-
-## Troubleshooting
-
-### Connection Issues
-
-**Can't Connect**
-- Verify server is running
-- Check network connectivity
-- Test Web UI access directly
-- Check firewall settings
-
-**Authentication Failed**
-- Verify username/password
-- Check account permissions
-- Reset qBittorrent credentials
-- Check for account lockout
-
-**Path Mapping Problems**
-- Verify paths exist
-- Check permissions
-- Test network access
-- Update mapping configuration
-
-### Performance Issues
-
-**Slow Response**
-- Check server load
-- Monitor network latency
-- Optimize server settings
-- Consider server upgrade
-
-**Sync Problems**
-- Check network connectivity
-- Verify server compatibility
-- Review sync settings
-- Check for conflicts
+**Server Selection**
+- Switch between configured servers
+- Per-torrent server assignment
+- Automatic failover options
 
 ## Best Practices
 
-### Server Setup
+### Server Organization
 
-**Hardware Requirements**
-- Adequate CPU for torrent processing
-- Sufficient RAM for active torrents
-- Fast storage for downloads
-- Good network connectivity
+**Naming Convention**
+- Use descriptive server names
+- Include location or purpose
+- Example: "Home-Desktop", "Office-Server"
 
-**Software Configuration**
-- Keep qBittorrent updated
-- Configure appropriate limits
-- Enable necessary features
-- Regular maintenance
+**Security Considerations**
+- Use strong passwords
+- Enable HTTPS for remote access
+- Regular credential updates
 
-### Management Strategies
+### Performance Optimization
 
-**Regular Monitoring**
-- Check server health daily
-- Monitor performance metrics
-- Review error logs
-- Update configurations
+**Load Balancing**
+- Distribute torrents across servers
+- Balance network and storage load
+- Monitor server performance
 
-**Backup Planning**
-- Regular server backups
-- Configuration exports
-- Disaster recovery plans
-- Data redundancy
+**Backup Strategy**
+- Multiple server redundancy
+- Regular configuration backups
+- Disaster recovery planning
 
 ---
 
