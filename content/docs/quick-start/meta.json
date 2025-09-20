@@ -1,4 +1,8 @@
 {
-  "first-run": "Quick Start",
-  "connecting-qbittorrent": "Connecting to qBittorrent"
+  "pages": [
+    "first-run",
+    "connecting-qbittorrent",
+    "download",
+    "pricing"
+  ]
 }
