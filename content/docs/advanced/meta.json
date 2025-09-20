@@ -1,12 +1,8 @@
 {
   "title": "Advanced Features",
   "pages": [
-    "multi-server",
-    "automation",
-    "integrations",
-    "customization",
     "source-code",
-    "api-integration",
-    "performance-tuning"
+    "host-qbit",
+    "host-torrent-vibe"
   ]
 }

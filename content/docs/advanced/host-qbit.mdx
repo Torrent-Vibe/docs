@@ -1,0 +1,187 @@
+---
+title: Host qBittorrent Server
+description: Guide to hosting your own qBittorrent server for Torrent Vibe
+---
+
+This guide shows you how to set up your own qBittorrent server using Docker. This allows Torrent Vibe to connect to a remote qBittorrent instance for torrent management.
+
+## Prerequisites
+
+Before setting up qBittorrent, ensure you have Docker installed on your system.
+
+## Install Docker
+
+### For macOS
+
+Visit the [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/) page and download the latest version. Follow the installation wizard to complete setup.
+
+### For Windows
+
+Visit the [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/) page and download the appropriate version for your system (Windows 10/11 Pro/Enterprise or Windows Home).
+
+### For Linux
+
+Use your package manager to install Docker:
+
+```bash
+# Ubuntu/Debian
+sudo apt update
+sudo apt install docker.io docker-compose
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# CentOS/RHEL/Fedora
+sudo dnf install docker docker-compose
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+For detailed installation instructions, visit the [official Docker documentation](https://docs.docker.com/get-docker/).
+
+## Set Up qBittorrent with Docker Compose
+
+Create a new directory for your qBittorrent setup and create a `docker-compose.yml` file:
+
+```yaml
+version: '3.8'
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - WEBUI_PORT=8080
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+    ports:
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+```
+
+**Note**: This Docker Compose configuration uses the [LinuxServer.io qBittorrent image](https://hub.docker.com/r/linuxserver/qbittorrent), which is a third-party service maintained by the LinuxServer community.
+
+### Configuration Explanation
+
+- **PUID/PGID**: User and group IDs for file permissions
+- **TZ**: Timezone setting (adjust to your local timezone)
+- **WEBUI_PORT**: Port for the web interface (default: 8080)
+- **Volumes**:
+  - `./config`: Stores qBittorrent configuration files
+  - `./downloads`: Directory for downloaded files
+- **Ports**:
+  - `8080`: Web UI access
+  - `6881`: TCP for torrent connections
+  - `6881/udp`: UDP for torrent connections
+
+## Docker Commands
+
+### Start qBittorrent
+
+Navigate to your directory containing `docker-compose.yml` and run:
+
+```bash
+docker-compose up -d
+```
+
+This will:
+- Download the qBittorrent image (first run only)
+- Create the container
+- Start the service in the background
+
+### Check Status
+
+```bash
+docker-compose ps
+```
+
+### View Logs
+
+```bash
+docker-compose logs -f qbittorrent
+```
+
+![Docker Logs Output](/screenshots/docker-log.png)
+
+This command shows real-time logs from the qBittorrent container, useful for troubleshooting startup issues or monitoring service health.
+
+### Stop qBittorrent
+
+```bash
+docker-compose down
+```
+
+### Update qBittorrent
+
+```bash
+docker-compose pull
+docker-compose up -d
+```
+
+## Initial Configuration
+
+1. **Access Web UI**: Open your browser and go to `http://localhost:8080`
+2. **Default Credentials**:
+   - Username: `admin`
+   - Password: shown inside logs after first start
+3. **Change Password**: Immediately change the default password in Settings > Web UI
+4. **Configure Downloads**: Set your default download directory in Settings > Downloads
+
+## Connect Torrent Vibe
+
+Once qBittorrent is running:
+
+1. Open Torrent Vibe
+2. Go to Settings > Servers
+3. Add a new server with:
+   - **Host**: Your server's IP address or domain
+   - **Port**: 8080 (or your configured WEBUI_PORT)
+   - **Username/Password**: Your qBittorrent credentials
+
+## Troubleshooting
+
+### Common Issues
+
+**Container won't start**:
+```bash
+docker-compose logs qbittorrent
+```
+
+**Permission issues**:
+- Ensure PUID/PGID match your user
+- Check directory permissions: `chmod 755 ./config ./downloads`
+
+**Port conflicts**:
+- Change ports in docker-compose.yml if 8080/6881 are in use
+- Update firewall rules to allow the ports
+
+**Can't access Web UI**:
+- Verify container is running: `docker-compose ps`
+- Check if port 8080 is accessible
+- Try accessing from container IP: `docker inspect qbittorrent`
+
+### Useful Commands
+
+```bash
+# Restart container
+docker-compose restart
+
+# Remove and recreate container
+docker-compose down
+docker-compose up -d
+
+# Clean up unused images
+docker image prune -f
+```
+
+## Security Considerations
+
+- **Change default credentials** immediately after first login
+- **Use strong passwords** for both qBittorrent and server access
+- **Configure firewall** to restrict access to necessary ports only
+- **Keep Docker and qBittorrent updated** for security patches
+- **Use HTTPS** if exposing to the internet (configure reverse proxy)

@@ -1,0 +1,318 @@
+---
+title: Host Torrent Vibe Server
+description: Complete guide to hosting Torrent Vibe on your own server with Nginx
+---
+
+This guide shows you how to host Torrent Vibe on your own server using Nginx. This allows you to access the Torrent Vibe interface from any device with a web browser.
+
+*This guide requires you to have basic knowledge of Linux server management and command line usage.*
+
+*Before performing these steps, remember to backup any existing data.*
+
+## Prerequisites
+
+Before setting up Torrent Vibe, ensure you have:
+
+- A server with root/administrator access
+- Ubuntu/Debian or CentOS/RHEL Linux distribution
+- Domain name (optional but recommended for SSL)
+- Basic command line knowledge
+
+## Step 1: Prepare Your Server
+
+### Install Nginx
+
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+```
+
+**CentOS/RHEL:**
+```bash
+sudo yum install nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+```
+
+### Configure Firewall
+
+Allow HTTP and HTTPS traffic:
+```bash
+# Ubuntu/Debian (ufw)
+sudo ufw allow 'Nginx Full'
+sudo ufw --force enable
+
+# CentOS/RHEL (firewalld)
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+```
+
+### Verify Nginx Installation
+
+Open your browser and visit `http://your-server-ip`. You should see the Nginx welcome page.
+
+## Step 2: Download Torrent Vibe
+
+Download the web client from the official releases:
+
+```bash
+# Create directory for Torrent Vibe
+sudo mkdir -p /var/www/torrent-vibe
+
+# Download the latest release
+wget https://github.com/Innei/Torrent-Vibe-Private/releases/latest/download/qb-client-webui-web.tar.gz
+
+# Extract the files
+sudo tar -xzf qb-client-webui-web.tar.gz -C /var/www/torrent-vibe/
+
+# Set proper permissions
+sudo chown -R www-data:www-data /var/www/torrent-vibe/
+sudo chmod -R 755 /var/www/torrent-vibe/
+```
+
+## Step 3: Configure Nginx
+
+Create a new Nginx configuration file:
+
+```bash
+sudo nano /etc/nginx/sites-available/torrent-vibe
+```
+
+Add the following configuration:
+
+```nginx
+server {
+    listen 80;
+    server_name your-domain.com www.your-domain.com;
+
+    root /var/www/torrent-vibe;
+    index index.html;
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "no-referrer-when-downgrade" always;
+    add_header Content-Security-Policy "default-src 'self' http: https: data: blob: 'unsafe-inline'" always;
+
+    # Gzip compression
+    gzip on;
+    gzip_vary on;
+    gzip_min_length 1024;
+    gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Cache static assets
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # API proxy to qBittorrent (if needed)
+    location /api/ {
+        proxy_pass http://localhost:8080/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+### Enable the Site
+
+```bash
+# Create symlink to enable site
+sudo ln -s /etc/nginx/sites-available/torrent-vibe /etc/nginx/sites-enabled/
+
+# Remove default site (optional)
+sudo rm /etc/nginx/sites-enabled/default
+
+# Test configuration
+sudo nginx -t
+
+# Reload Nginx
+sudo systemctl reload nginx
+```
+
+## Step 4: SSL Configuration (Recommended)
+
+### Install Certbot
+
+```bash
+# Ubuntu/Debian
+sudo apt install certbot python3-certbot-nginx
+
+# CentOS/RHEL
+sudo yum install certbot python-certbot-nginx
+```
+
+### Get SSL Certificate
+
+```bash
+sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+```
+
+Follow the prompts to configure SSL. Certbot will automatically update your Nginx configuration.
+
+### SSL Configuration in Nginx
+
+If you prefer manual SSL setup, update your server block:
+
+```nginx
+server {
+    listen 443 ssl http2;
+    server_name your-domain.com www.your-domain.com;
+
+    ssl_certificate /path/to/your/certificate.crt;
+    ssl_certificate_key /path/to/your/private.key;
+
+    # SSL settings
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384;
+    ssl_prefer_server_ciphers off;
+
+    # ... rest of your configuration
+}
+
+# Redirect HTTP to HTTPS
+server {
+    listen 80;
+    server_name your-domain.com www.your-domain.com;
+    return 301 https://$server_name$request_uri;
+}
+```
+
+## Step 5: Access Your Torrent Vibe
+
+1. Open your browser and navigate to:
+   - `http://your-domain.com` (without SSL)
+   - `https://your-domain.com` (with SSL)
+
+2. You should see the Torrent Vibe login interface
+
+3. Configure your qBittorrent connection:
+   - Host: Your qBittorrent server IP
+   - Port: 8080 (default)
+   - Username/Password: Your qBittorrent credentials
+
+## Troubleshooting
+
+### Common Issues
+
+**403 Forbidden Error:**
+```bash
+# Check permissions
+sudo chown -R www-data:www-data /var/www/torrent-vibe/
+sudo chmod -R 755 /var/www/torrent-vibe/
+```
+
+**502 Bad Gateway (API issues):**
+- Ensure qBittorrent is running on port 8080
+- Check if the API proxy configuration is correct
+- Verify qBittorrent Web UI is enabled
+
+**SSL Certificate Issues:**
+```bash
+# Renew certificates
+sudo certbot renew
+
+# Reload Nginx
+sudo systemctl reload nginx
+```
+
+**Nginx Not Starting:**
+```bash
+# Check for syntax errors
+sudo nginx -t
+
+# View error logs
+sudo tail -f /var/log/nginx/error.log
+```
+
+### Useful Commands
+
+```bash
+# Check Nginx status
+sudo systemctl status nginx
+
+# View access logs
+sudo tail -f /var/log/nginx/access.log
+
+# View error logs
+sudo tail -f /var/log/nginx/error.log
+
+# Restart Nginx
+sudo systemctl restart nginx
+
+# Test configuration
+sudo nginx -t
+```
+
+## Security Best Practices
+
+- **Keep Nginx updated**: `sudo apt update && sudo apt upgrade nginx`
+- **Use SSL/TLS**: Always enable HTTPS for secure connections
+- **Firewall configuration**: Only open necessary ports (80, 443)
+- **Regular backups**: Backup your configuration files
+- **Monitor logs**: Regularly check access and error logs
+- **Strong passwords**: Use strong credentials for qBittorrent access
+
+## Performance Optimization
+
+### Nginx Tuning
+
+Add to `/etc/nginx/nginx.conf`:
+
+```nginx
+worker_processes auto;
+worker_connections 1024;
+
+# Enable gzip
+gzip on;
+gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss;
+
+# Cache settings
+proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=api_cache:10m max_size=10g inactive=60m use_temp_path=off;
+```
+
+### Static File Caching
+
+Your configuration already includes static file caching. For better performance:
+
+```nginx
+location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+    expires 1y;
+    add_header Cache-Control "public, immutable";
+    add_header X-Content-Type-Options nosniff;
+}
+```
+
+## Updating Torrent Vibe
+
+To update to a newer version:
+
+```bash
+# Backup current installation
+sudo cp -r /var/www/torrent-vibe /var/www/torrent-vibe-backup
+
+# Download new version
+wget https://github.com/Innei/Torrent-Vibe-Private/releases/latest/download/qb-client-webui-web.tar.gz
+
+# Extract and replace
+sudo rm -rf /var/www/torrent-vibe/*
+sudo tar -xzf qb-client-webui-web.tar.gz -C /var/www/torrent-vibe/
+
+# Restore permissions
+sudo chown -R www-data:www-data /var/www/torrent-vibe/
+
+# Reload Nginx
+sudo systemctl reload nginx
+```

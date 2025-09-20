@@ -1,3 +1,4 @@
 {
-  "pages": ["first-run", "download", "pricing"]
+  "title": "Quick Start",
+  "pages": [ "download", "pricing"]
 }
