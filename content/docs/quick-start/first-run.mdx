@@ -7,21 +7,16 @@ Torrent Vibe is a native macOS application that's ready to use right after insta
 
 ## Installation & First Launch
 
-1. Download and install Torrent Vibe on your macOS system
-2. Double-click the application icon to launch
-3. The main interface will open showing the torrent management dashboard
+To install the Torrent Vibe desktop app:
+
+1. [Download & Installation](./download.mdx) Torrent Vibe
+2. Double-click the application icon to launch the app
+
+For the web app, such as hosting Torrent Vibe on a server, please refer to [Advanced: Torrent Vibe Server Setup](../advanced/server-setup.mdx).
 
 ## Initial Setup
 
-### Empty State
-When you first launch Torrent Vibe, you'll see an empty interface ready for your first torrent.
-
-![Empty Interface](/screenshots/TorrentVibeScreenshot_MainEmptyInterface.jpeg)
-
-The interface shows:
-- **Add Button**: Blue "+" button to add new torrents
-- **Drag & Drop Area**: Drop torrent files or magnet links here
-- **Connection Status**: Green banner when successfully connected
+When you first launch Torrent Vibe, you'll need to connect it to your qBittorrent server (local or remote).
 
 ### Connecting to qBittorrent
 
@@ -33,59 +28,25 @@ To connect to your qBittorrent server:
    - **Port**: Web UI port (default: `8080`)
    - **Username**: Your qBittorrent username
    - **Password**: Your qBittorrent password
-   - **HTTPS**: Enable for secure connections (encrypts your connection to protect sensitive information)
+   - **HTTPS**: Enable for secure connections
+
+Secure connections are recommended if your server supports it. If you don't know, try with this option enabled first.
 
 ![Connection Dialog](/screenshots/TorrentVibeScreenshot_qBittorrent_Connection_Dialog.jpeg)
 
 ### Connection Success
+
 Once connected, you'll see a success notification and can begin managing torrents.
+
+![Connected Interface](/screenshots/TorrentVibeScreenshot_MainEmptyInterface.jpeg)
 
 ## Adding Your First Torrent
 
-### Method 1: Add Button
 1. Click the blue "+" button in the main interface
-2. Choose to add from torrent file or magnet link
+2. Choose to paste magnet link or upload a torrent file
 3. Configure download settings as needed
-
-### Method 2: Drag & Drop
-Simply drag torrent files or magnet links directly into the application window.
-
-![Add Torrent Dialog](/screenshots/TorrentVibeScreenshot_AddTorrentDialog.png)
-
-### Torrent Settings
-When adding torrents, you can configure:
-- **Save Path**: Where to store downloaded files
-- **Category**: Organize torrents by category
-- **Torrent Management**: Skip hash checking, sequential download, etc.
-- **Start Options**: Begin download immediately or manually
-
-## Basic Operations
-
-### Monitoring Downloads
-- View real-time download/upload speeds
-- Track progress with visual progress bars
-- Monitor peer connections and file status
-
-### Managing Torrents
-- **Pause/Resume**: Control download states
-- **Categories**: Organize by type (Movies, Software, etc.)
-- **Priority**: Set download priorities
-- **File Selection**: Choose specific files to download
+4. Click "Add Torrents" to start the download
 
 ## Next Steps
 
-Once you're comfortable with basic operations:
-
-1. **[Configure Settings](settings/index.mdx)**: Customize appearance, speeds, and connections
-2. **[Advanced Features](advanced/performance-tuning.mdx)**: Explore API integrations and automation
-3. **[Multi-Server Setup](settings/servers.mdx)**: Connect to multiple qBittorrent instances
-
-## Getting Help
-
-- Check the [User Guide](user-guide/interface-overview.mdx) for detailed feature explanations
-- Visit [Troubleshooting](troubleshooting/index.mdx) for common issues
-- Access [Source Code](advanced/source-code.mdx) for development information
-
----
-
-*Tip: Torrent Vibe supports both local qBittorrent instances and remote servers for flexible torrent management.*
+- Explore the [User Guide](../user-guide/interface-overview.mdx) for detailed feature explanations

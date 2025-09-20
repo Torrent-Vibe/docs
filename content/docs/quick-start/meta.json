@@ -1,8 +1,3 @@
 {
-  "pages": [
-    "first-run",
-    "connecting-qbittorrent",
-    "download",
-    "pricing"
-  ]
+  "pages": ["first-run", "download", "pricing"]
 }
