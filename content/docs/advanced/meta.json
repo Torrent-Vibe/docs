@@ -1,8 +1,4 @@
 {
   "title": "Advanced Features",
-  "pages": [
-    "source-code",
-    "host-qbit",
-    "host-torrent-vibe"
-  ]
+  "pages": ["source-code", "host-qbit", "host-torrent-vibe"]
 }

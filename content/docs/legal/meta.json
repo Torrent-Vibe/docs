@@ -1,8 +1,4 @@
 {
   "title": "Legal",
-  "pages": [
-    "privacy-policy",
-    "terms-of-service",
-    "open-source-licenses"
-  ]
+  "pages": ["privacy-policy", "terms-of-service", "open-source-licenses"]
 }
