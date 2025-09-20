@@ -3,6 +3,7 @@
   "pages": [
     "appearance",
     "preferences",
+    "discover",
     "api-tokens",
     "servers",
     "downloads",
