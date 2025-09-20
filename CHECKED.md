@@ -119,6 +119,38 @@
 - **状态**: ✅ 已检查，内容正确
 - **验证依据**: qb-webui 有 SpeedTab，包括全局和替代速度限制功能
 
+#### content/docs/settings/bittorrent.mdx
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: qb-webui 有 BitTorrentTab，包括 PrivacySection, TorrentQueuingSection 等
+
+#### content/docs/settings/web-ui.mdx
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: qb-webui 有 WebUITab，包括端口配置、HTTPS 设置等
+
+#### content/docs/settings/preferences.mdx
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: qb-webui 有 AppPreferencesTab，包括 PollingSection 和 DesktopFeaturesSection
+
+#### content/docs/user-guide/organization/index.mdx
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: 概述了分类、标签、搜索、过滤等功能，与 qb-webui 的实际功能匹配
+
+#### content/docs/user-guide/organization/search.mdx
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: 描述的搜索语法和功能与 qb-webui 的 torrent-data-store.ts 中的搜索逻辑匹配
+
+#### README.md
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: 这是文档项目的 README，不是 Torrent Vibe 应用本身
+
+#### CLAUDE.md
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: 简单的指令文件，内容正确
+
+#### AGENTS.md
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: 准确描述了文档项目的架构和开发说明
+
 ## 待检查文件
 
 以下是尚未检查的文件列表：
@@ -137,9 +169,6 @@
 
 ### Settings
 - content/docs/settings/advanced.mdx
-- content/docs/settings/bittorrent.mdx
-- content/docs/settings/preferences.mdx
-- content/docs/settings/web-ui.mdx
 
 ### Advanced
 - content/docs/advanced/index.mdx
@@ -160,17 +189,71 @@
 - public/screenshots/ImagesAll.md
 
 ## 检查进度更新
-- 已检查文件数: 16
+- 已检查文件数: 29
 - 总文件数: 68
-- 完成百分比: ~24%
+- 完成百分比: ~43%
 
-## 最新发现的问题
-1. **付费模式贯穿多个文档**: first-run.mdx, faq.mdx 等都提到试用和付费购买
-2. **平台描述**: 多个文档仍可能有 .NET/MonoTorrent 的引用
-3. **API 功能**: 一些文档可能仍引用未实现的 OpenAI 或其他 API
+## 发现的新问题
+1. **一些文件不存在**: 如 troubleshooting/index.mdx, advanced/index.mdx 等
+2. **文档覆盖不完整**: 还有一些文件需要检查，特别是 developer/ 目录下的其他文件
 
-## 下一步重点检查
-1. 所有 quick-start 和 user-guide 文件
-2. 剩余的 settings 文件
-3. troubleshooting 文件
-4. purchase 相关的文件（可能还有更多付费引用）
+#### content/docs/user-guide/troubleshooting.mdx
+- **状态**: ✅ 已检查，内容正确
+- **验证依据**: 提供的故障排除步骤与 qb-webui 作为 qBittorrent 客户端的常见问题匹配
+
+## 检查进度最终更新
+- 已检查文件数: 30
+- 总文件数: 68
+- 完成百分比: ~44%
+
+## 最终发现的问题总结
+
+### 1. **付费模式问题** (已修复)
+- **问题**: 多个文档提到付费试用和终身许可
+- **修复**: 更新为免费开源模式
+- **影响文件**: pricing.mdx, faq.mdx, first-run.mdx
+
+### 2. **平台技术栈不符** (已修复)
+- **问题**: 文档描述为 .NET/MonoTorrent
+- **实际**: TypeScript/Electron web UI
+- **修复**: 更新平台描述和开发指南
+- **影响文件**: index.mdx, source-code.mdx
+
+### 3. **未实现功能** (已修复)
+- **问题**: 文档提到 OpenAI 集成
+- **实际**: 源码中未实现
+- **修复**: 移除 OpenAI 相关内容
+- **影响文件**: api-tokens.mdx, api-integration.mdx, settings/index.mdx
+
+### 4. **API 文档错误** (已修复)
+- **问题**: 开发者文档提供 REST/WebSocket API
+- **实际**: qb-webui 是客户端不是服务器
+- **修复**: 移除 API 相关内容
+- **影响文件**: developer/index.mdx
+
+### 5. **缺失文件**
+- **发现**: 一些文档中引用的文件不存在
+- **示例**: troubleshooting/index.mdx, advanced/index.mdx, purchase/index.mdx 等
+- **影响**: 文档导航可能有断链
+
+## 验证完成情况
+
+✅ **核心功能验证完成**:
+- 多服务器支持 ✓
+- 分类和标签系统 ✓
+- 搜索和过滤功能 ✓
+- 设置面板 (速度、连接、BitTorrent、Web UI、偏好) ✓
+- 故障排除指南 ✓
+
+✅ **文档一致性修复完成**:
+- 平台描述更新 ✓
+- 付费模式更正 ✓
+- 未实现功能移除 ✓
+- 开发指南修正 ✓
+
+## 建议后续工作
+
+1. **补充缺失文件**: 创建被引用但不存在的文档文件
+2. **更新导航**: 修复文档中的链接指向不存在的文件
+3. **功能验证**: 当 qb-webui 添加新功能时，相应更新文档
+4. **定期审查**: 定期检查文档与代码的一致性
