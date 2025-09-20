@@ -12,28 +12,27 @@ The BitTorrent settings panel provides advanced configuration options for the Bi
 ## Peer Discovery
 
 ### Decentralized Network (DHT)
-Distributed hash table for peer discovery:
+Distributed hash table for peer discovery (helps find peers even when trackers are down):
 
 - **Enable DHT**: Find peers without trackers
-  - **Enabled**: Connect to DHT network
-  - **Disabled**: Rely only on trackers
+  - **Enabled**: Connect to DHT network (recommended for better connectivity)
+  - **Disabled**: Rely only on trackers (may reduce peer availability)
   - **Recommended**: Enable for better peer finding
 
 ### Peer Exchange (PEX)
-Share peer lists between connected peers:
+Share peer lists between connected peers (helps find more peers for faster downloads):
 
 - **Enable Peer Exchange**: Exchange peer information
-  - **Enabled**: Share peer lists with connected peers
-  - **Disabled**: No peer list sharing
+  - **Enabled**: Share peer lists with connected peers (recommended)
+  - **Disabled**: No peer list sharing (slightly more private but fewer peers)
   - **Privacy**: Slightly reduces anonymity
 
 ### Local Peer Discovery (LSD)
-Discover peers on local network:
+Discover peers on local network (faster connections when downloading from devices on your home network):
 
 - **Enable Local Peer Discovery**: Find local peers
-  - **Enabled**: Discover peers on same network
-  - **Disabled**: Skip local peer discovery
-  - **LAN**: Faster connections on local networks
+  - **Enabled**: Discover peers on same network (recommended for home use)
+  - **Disabled**: Skip local peer discovery (use for public networks)
 
 ## Privacy & Anonymity
 

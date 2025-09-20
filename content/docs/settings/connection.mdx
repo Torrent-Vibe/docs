@@ -12,27 +12,24 @@ The Connection settings panel allows you to configure how Torrent Vibe connects 
 ## Peer Connection Protocol
 
 ### Peer Encryption
-Control encryption requirements for peer connections:
+Control encryption requirements for peer connections (encryption protects your data from ISP monitoring):
 
-- **Disabled**: No encryption requirements
+- **Disabled**: No encryption requirements (maximum compatibility but less secure)
   - Connects to both encrypted and unencrypted peers
-  - Maximum compatibility but less secure
 
-- **Enabled**: Require encrypted connections
+- **Enabled**: Require encrypted connections (better privacy, recommended for most users)
   - Only connects to peers using encryption
-  - Better privacy but may reduce peer availability
 
-- **Forced**: Force outgoing encryption
+- **Forced**: Force outgoing encryption (maximum security but may impact connection speed)
   - All outgoing connections use encryption
-  - Best security but may impact connection speed
 
 ### Anonymous Mode
-Enhanced privacy features:
+Enhanced privacy features (reduces the ability of others to track your torrent activity):
 
 - **Enable Anonymous Mode**: Activate privacy protections
   - Disables peer exchange of IP addresses
   - Reduces tracking capabilities
-  - May impact download speeds
+  - May slightly impact download speeds due to fewer peers
 
 ## Listening Port
 
@@ -44,10 +41,9 @@ Set up the port for incoming connections:
   - **Range**: 1024-65535
   - **Random**: Generate random available port
 
-- **Use UPnP / NAT-PMP**: Automatic port forwarding
-  - **Enabled**: Automatically configure router
-  - **Disabled**: Manual port forwarding required
-  - **Recommended**: Enable for home networks
+- **Use UPnP / NAT-PMP**: Automatic port forwarding (lets Torrent Vibe configure your router automatically)
+  - **Enabled**: Automatically configure router (recommended for home networks)
+  - **Disabled**: Manual port forwarding required (for advanced users or specific network setups)
 
 ## Network Optimization
 

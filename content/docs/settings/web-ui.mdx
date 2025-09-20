@@ -23,23 +23,21 @@ Set up the web server port:
 ### HTTPS Security
 Enable secure encrypted connections:
 
-- **Use HTTPS**: Enable SSL/TLS encryption
+- **Use HTTPS**: Enable SSL/TLS encryption (recommended for remote access to protect your credentials and data)
   - **Enabled**: Secure https:// connections
   - **Disabled**: Standard http:// connections
   - **Recommended**: Enable for remote access
 
 ### Certificate Management
-Configure SSL certificates for HTTPS:
+Configure SSL certificates for HTTPS (required when HTTPS is enabled for secure remote access):
 
-- **Certificate Path**: Path to SSL certificate file
-  - **Format**: .pem or .crt file
-  - **Location**: Full path to certificate file
-  - **Permissions**: Readable by application
+- **Certificate Path**: Path to SSL certificate file (.pem or .crt format)
+  - **Purpose**: Validates your server's identity to browsers
+  - **Source**: Can be self-signed for personal use or purchased from CA
 
-- **Key Path**: Path to private key file
-  - **Format**: .key file
-  - **Location**: Full path to private key
-  - **Security**: Keep private key secure
+- **Key Path**: Path to private key file (.key format)
+  - **Security**: Keep this file secure and never share it
+  - **Purpose**: Used to encrypt connections to your server
 
 ## Authentication & Access
 
